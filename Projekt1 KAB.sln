@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projekt1 KAB", "Projekt1 KAB\Projekt1 KAB.csproj", "{A6665DB5-E76C-4BFD-B3FB-76583CA427BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryKAB", "..\ClassLibraryKAB\ClassLibraryKAB\ClassLibraryKAB.csproj", "{BFBEC1F4-7E7A-4CB5-9774-8C556698DF7E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{802B7EC3-DCD2-461C-B4EC-4FDB74211AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryKAB", "..\ClassLibraryKAB\ClassLibraryKAB\ClassLibraryKAB.csproj", "{BFBEC1F4-7E7A-4CB5-9774-8C556698DF7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
