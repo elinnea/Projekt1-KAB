@@ -12,151 +12,120 @@ namespace ClassLibraryKAB
     {
         static string source = "Data Source=.;Initial Catalog=KontorsprylarAB;Integrated Security=True";
 
-        public static int CreateOrderHead(int customerID, decimal discount, string orderDate, string orderStatus)
+        // CRUD for the Customer Table
+
+        public static int AddCustomer(string userName, string userPassword, string firstName, string lastName, string street, string zip, string city, string countryCode, string email, string phoneNumber, bool isAdmin, bool isActive)
         {
-            int new_ID = 0;
-
+            int nID = 0;
             SqlConnection myConnection = new SqlConnection(source);
-
             try
             {
                 myConnection.Open();
+                SqlCommand myCommand = new SqlCommand("AddCustomer", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;
 
-                SqlCommand myCommand = new SqlCommand("CreateOrderHead", myConnection);
-                myCommand.CommandType = CommandType.StoredProcedure;                        // För att använda stored procedure
+                SqlParameter newUserName = new SqlParameter("@userName", SqlDbType.VarChar);
+                newUserName.Value = userName;
+                SqlParameter newUserPassword = new SqlParameter("@userPassword", SqlDbType.VarChar);
+                newUserPassword.Value = userPassword;
+                SqlParameter newFirstName = new SqlParameter("@firstName", SqlDbType.VarChar);
+                newFirstName.Value = firstName;
+                SqlParameter newLastName = new SqlParameter("@lastName", SqlDbType.VarChar);
+                newLastName.Value = lastName;
+                SqlParameter newStreet = new SqlParameter("@street", SqlDbType.VarChar);
+                newStreet.Value = street;
+                SqlParameter newZip = new SqlParameter("@zip", SqlDbType.VarChar);
+                newZip.Value = zip;
+                SqlParameter newCity = new SqlParameter("@city", SqlDbType.VarChar);
+                newCity.Value = city;
+                SqlParameter newCountryCode = new SqlParameter("@countryCode", SqlDbType.VarChar);
+                newCountryCode.Value = countryCode;
+                SqlParameter newEmail = new SqlParameter("@email", SqlDbType.VarChar);
+                newEmail.Value = email;
+                SqlParameter newPhoneNumber = new SqlParameter("@phoneNumber", SqlDbType.VarChar);
+                newPhoneNumber.Value = phoneNumber;
+                SqlParameter newIsAdmin = new SqlParameter("@isAdmin", SqlDbType.VarChar);
+                newIsAdmin.Value = isAdmin;
+                SqlParameter newIsActive = new SqlParameter("@isActive", SqlDbType.VarChar);
+                newIsActive.Value = isActive;
 
-                // Skapa parametrar
+                SqlParameter customerID = new SqlParameter("@customer_id", SqlDbType.Int);
+                customerID.Direction = ParameterDirection.Output;
 
-                SqlParameter myCustomerID = new SqlParameter("@CustomerID", SqlDbType.VarChar);
-                myCustomerID.Value = customerID;
-
-                SqlParameter myDiscount = new SqlParameter("@Discount", SqlDbType.VarChar);
-                myDiscount.Value = discount;
-
-                SqlParameter myOrderDate = new SqlParameter("@OrderDate", SqlDbType.VarChar);
-                myOrderDate.Value = orderDate;
-
-                SqlParameter myOrderStatus = new SqlParameter("@OrderStatus", SqlDbType.VarChar);
-                myOrderStatus.Value = orderStatus;
-
-                SqlParameter newOrderHeadID = new SqlParameter("@OrderHeadID", SqlDbType.Int);
-                newOrderHeadID.Direction = ParameterDirection.Output;
-
-                myCommand.Parameters.Add(myCustomerID);
-                myCommand.Parameters.Add(myDiscount);
-                myCommand.Parameters.Add(myOrderDate);
-                myCommand.Parameters.Add(myOrderStatus);
-                myCommand.Parameters.Add(newOrderHeadID);
+                myCommand.Parameters.Add(newUserName);
+                myCommand.Parameters.Add(newUserPassword);
+                myCommand.Parameters.Add(newFirstName);
+                myCommand.Parameters.Add(newLastName);
+                myCommand.Parameters.Add(newStreet);
+                myCommand.Parameters.Add(newZip);
+                myCommand.Parameters.Add(newCity);
+                myCommand.Parameters.Add(newCountryCode);
+                myCommand.Parameters.Add(newEmail);
+                myCommand.Parameters.Add(newPhoneNumber);
+                myCommand.Parameters.Add(newIsAdmin);
+                myCommand.Parameters.Add(newIsActive);
+                myCommand.Parameters.Add(customerID);
 
                 myCommand.ExecuteNonQuery();
-                new_ID = (int)newOrderHeadID.Value;
+                nID = (int)customerID.Value;
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             finally
             {
                 myConnection.Close();
             }
-
-            return new_ID;
-
+            return nID;
         }
 
-        public static List<OrderHead> ReadOrderHeads()
+        public static List<Customer> ReadAllCustomers()
         {
-            List<OrderHead> orderHeads = new List<OrderHead>();
+            List<Customer> customers = new List<Customer>();
 
-            SqlConnection myConnection = new SqlConnection(source);
-
-
+            SqlConnection myConnection = new SqlConnection();
+            myConnection.ConnectionString = source;
             try
             {
                 myConnection.Open();
 
-                SqlCommand myCommand = new SqlCommand();
-                myCommand.Connection = myConnection;
-                myCommand.CommandText = "select * from OrderHead";
-
-                SqlDataReader myReader;
-                myReader = myCommand.ExecuteReader();
+                SqlCommand myCommand = new SqlCommand("select * from Customer", myConnection);
+                SqlDataReader myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
                 {
-                    orderHeads.Add(new OrderHead(
-                                                (Convert.ToInt32(myReader["OrderHeadID"].ToString())),
-                                                (Convert.ToInt32(myReader["CustomerID"].ToString())),
-                                                (Convert.ToDecimal(myReader["Discount"].ToString())),
-                                                myReader["OrderDate"].ToString(),
-                                                myReader["OrderStatus"].ToString()));
+                    customers.Add(new Customer(Convert.ToInt32(myReader["CustomerID"].ToString()), myReader["UserName"].ToString(), myReader["UserPassword"].ToString(),
+                    myReader["FirstName"].ToString(), myReader["LastName"].ToString(), myReader["Street"].ToString(), myReader["Zip"].ToString(), myReader["City"].ToString(),
+                    myReader["CountryCode"].ToString(), myReader["Email"].ToString(), myReader["PhoneNumber"].ToString(), Convert.ToBoolean(myReader["IsAdmin"]), Convert.ToBoolean(myReader["IsActive"])));
                 }
+
+
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.Message);
+
             }
             finally
             {
                 myConnection.Close();
             }
-            return orderHeads;
+            return customers;
         }
 
-        public static void UpdateOrderHead(int orderHeadID, int customerID, decimal discount, string orderDate, string orderStatus)
-        {
+        // ReadCustomer(int customerID)
 
-            SqlConnection myConnection = new SqlConnection(source);
+        // UpdateCustomer()
 
-            try
-            {
-                myConnection.Open();
+        // DeleateCustomer()
 
-                SqlCommand myCommand = new SqlCommand("UpdateOrderHead", myConnection);
-                myCommand.CommandType = CommandType.StoredProcedure;                        // För att använda stored procedure
 
-                // Skapa parametrar
+        // CRUD for the Article Table
 
-                SqlParameter myCustomerID = new SqlParameter("@CustomerID", SqlDbType.VarChar);
-                myCustomerID.Value = customerID;
-
-                SqlParameter myDiscount = new SqlParameter("@Discount", SqlDbType.VarChar);
-                myDiscount.Value = discount;
-
-                SqlParameter myOrderDate = new SqlParameter("@OrderDate", SqlDbType.VarChar);
-                myOrderDate.Value = orderDate;
-
-                SqlParameter myOrderStatus = new SqlParameter("@OrderStatus", SqlDbType.VarChar);
-                myOrderStatus.Value = orderStatus;
-
-                SqlParameter myOrderHeadID = new SqlParameter("@OrderHeadID", SqlDbType.Int);
-                myOrderHeadID.Value = orderHeadID;
-
-                myCommand.Parameters.Add(myCustomerID);
-                myCommand.Parameters.Add(myDiscount);
-                myCommand.Parameters.Add(myOrderDate);
-                myCommand.Parameters.Add(myOrderStatus);
-                myCommand.Parameters.Add(myOrderHeadID);
-
-                myCommand.ExecuteNonQuery();
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                myConnection.Close();
-            }
-
-        }
-
-        public static void DeleateOrderHead()
-        {
-
-        }
 
         List<Article> articles = new List<Article>();
 
@@ -357,9 +326,13 @@ namespace ClassLibraryKAB
             finally { myConnection.Close(); }
         }
 
-        public static List<OrderDetail> ReadOrderDetails(int orderHeadID)
+
+        // CRUD for the OrderHead Table
+
+
+        public static int CreateOrderHead(int customerID, decimal discount, string orderDate, string orderStatus)
         {
-            List<OrderDetail> orderDetails = new List<OrderDetail>();
+            int new_ID = 0;
 
             SqlConnection myConnection = new SqlConnection(source);
 
@@ -367,21 +340,75 @@ namespace ClassLibraryKAB
             {
                 myConnection.Open();
 
-                SqlCommand myCommand = new SqlCommand($"select * from OrderDetails where OrderHeadID = {orderHeadID} order by OrderDetailsID asc", myConnection);
-                SqlDataReader myReader = myCommand.ExecuteReader();
+                SqlCommand myCommand = new SqlCommand("CreateOrderHead", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;                        // För att använda stored procedure
+
+                // Skapa parametrar
+
+                SqlParameter myCustomerID = new SqlParameter("@CustomerID", SqlDbType.VarChar);
+                myCustomerID.Value = customerID;
+
+                SqlParameter myDiscount = new SqlParameter("@Discount", SqlDbType.VarChar);
+                myDiscount.Value = discount;
+
+                SqlParameter myOrderDate = new SqlParameter("@OrderDate", SqlDbType.VarChar);
+                myOrderDate.Value = orderDate;
+
+                SqlParameter myOrderStatus = new SqlParameter("@OrderStatus", SqlDbType.VarChar);
+                myOrderStatus.Value = orderStatus;
+
+                SqlParameter newOrderHeadID = new SqlParameter("@OrderHeadID", SqlDbType.Int);
+                newOrderHeadID.Direction = ParameterDirection.Output;
+
+                myCommand.Parameters.Add(myCustomerID);
+                myCommand.Parameters.Add(myDiscount);
+                myCommand.Parameters.Add(myOrderDate);
+                myCommand.Parameters.Add(myOrderStatus);
+                myCommand.Parameters.Add(newOrderHeadID);
+
+                myCommand.ExecuteNonQuery();
+                new_ID = (int)newOrderHeadID.Value;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+
+            return new_ID;
+
+        }
+
+        public static List<OrderHead> ReadOrderHeads()
+        {
+            List<OrderHead> orderHeads = new List<OrderHead>();
+
+            SqlConnection myConnection = new SqlConnection(source);
+
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand();
+                myCommand.Connection = myConnection;
+                myCommand.CommandText = "select * from OrderHead";
+
+                SqlDataReader myReader;
+                myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
                 {
-                    int OrderDetailsID = Convert.ToInt32(myReader["OrderDetailsID"].ToString());
-                    int OrderHeadID = Convert.ToInt32(myReader["OrderHeadID"].ToString());
-                    int ArticleID = Convert.ToInt32(myReader["ArticleID"].ToString());
-                    decimal Price = Convert.ToDecimal(myReader["Price"].ToString());
-                    int NumberOfArticles = Convert.ToInt32(myReader["NumberOfArticles"].ToString());
-
-                    orderDetails.Add(new OrderDetail(OrderDetailsID, OrderHeadID, ArticleID, Price, NumberOfArticles));
-
+                    orderHeads.Add(new OrderHead(
+                                                (Convert.ToInt32(myReader["OrderHeadID"].ToString())),
+                                                (Convert.ToInt32(myReader["CustomerID"].ToString())),
+                                                (Convert.ToDecimal(myReader["Discount"].ToString())),
+                                                myReader["OrderDate"].ToString(),
+                                                myReader["OrderStatus"].ToString()));
                 }
-
             }
             catch (Exception ex)
             {
@@ -392,8 +419,110 @@ namespace ClassLibraryKAB
             {
                 myConnection.Close();
             }
-            return orderDetails;
+            return orderHeads;
         }
+
+        public static OrderHead ReadOrderHead(int orderHeadID)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand();
+                myCommand.Connection = myConnection;
+                myCommand.CommandText = $"select * from OrderHead where OrderHeadID = {orderHeadID}";
+
+                SqlDataReader myReader;
+                myReader = myCommand.ExecuteReader();
+
+                myReader.Read();
+
+                return (new OrderHead(
+                                                (Convert.ToInt32(myReader["OrderHeadID"].ToString())),
+                                                (Convert.ToInt32(myReader["CustomerID"].ToString())),
+                                                (Convert.ToDecimal(myReader["Discount"].ToString())),
+                                                myReader["OrderDate"].ToString(),
+                                                myReader["OrderStatus"].ToString()));
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+        }
+
+        //UpdateOrderHead stored procedure not ready!
+        public static void UpdateOrderHead(int orderHeadID, int customerID, decimal discount, string orderDate, string orderStatus)
+        {
+
+            SqlConnection myConnection = new SqlConnection(source);
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand("UpdateOrderHead", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;                        // För att använda stored procedure
+
+                // Skapa parametrar
+
+                SqlParameter myCustomerID = new SqlParameter("@CustomerID", SqlDbType.VarChar);
+                myCustomerID.Value = customerID;
+
+                SqlParameter myDiscount = new SqlParameter("@Discount", SqlDbType.VarChar);
+                myDiscount.Value = discount;
+
+                SqlParameter myOrderDate = new SqlParameter("@OrderDate", SqlDbType.VarChar);
+                myOrderDate.Value = orderDate;
+
+                SqlParameter myOrderStatus = new SqlParameter("@OrderStatus", SqlDbType.VarChar);
+                myOrderStatus.Value = orderStatus;
+
+                SqlParameter myOrderHeadID = new SqlParameter("@OrderHeadID", SqlDbType.Int);
+                myOrderHeadID.Value = orderHeadID;
+
+                myCommand.Parameters.Add(myCustomerID);
+                myCommand.Parameters.Add(myDiscount);
+                myCommand.Parameters.Add(myOrderDate);
+                myCommand.Parameters.Add(myOrderStatus);
+                myCommand.Parameters.Add(myOrderHeadID);
+
+                myCommand.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+
+        }
+
+        public static void DeleateOrderHead(int OrderHeadID)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand($"delete from OrderHead where OrderHeadID = {OrderHeadID}", myConnection);
+                SqlDataReader myReader = myCommand.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { myConnection.Close(); }
+        }
+
+
+        // CRUD for the OrderDetail Table
+
 
         public static void CreateOrderDetail(int orderHeadID)
         {
@@ -431,116 +560,53 @@ namespace ClassLibraryKAB
             }
         }
 
-        public void Update()
+        public static List<OrderDetail> ReadOrderDetail(int orderHeadID)
         {
-            //return TODO;
-        }
+            List<OrderDetail> orderDetails = new List<OrderDetail>();
 
-        public static int AddCustomer(string userName, string userPassword, string firstName, string lastName, string street, string zip, string city, string countryCode, string email, string phoneNumber, bool isAdmin, bool isActive)
-        {
-            int nID = 0;
             SqlConnection myConnection = new SqlConnection(source);
-            try
-            {
-                myConnection.Open();
-                SqlCommand myCommand = new SqlCommand("AddCustomer", myConnection);
-                myCommand.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter newUserName = new SqlParameter("@userName", SqlDbType.VarChar);
-                newUserName.Value = userName;
-                SqlParameter newUserPassword = new SqlParameter("@userPassword", SqlDbType.VarChar);
-                newUserPassword.Value = userPassword;
-                SqlParameter newFirstName = new SqlParameter("@firstName", SqlDbType.VarChar);
-                newFirstName.Value = firstName;
-                SqlParameter newLastName = new SqlParameter("@lastName", SqlDbType.VarChar);
-                newLastName.Value = lastName;
-                SqlParameter newStreet = new SqlParameter("@street", SqlDbType.VarChar);
-                newStreet.Value = street;
-                SqlParameter newZip = new SqlParameter("@zip", SqlDbType.VarChar);
-                newZip.Value = zip;
-                SqlParameter newCity = new SqlParameter("@city", SqlDbType.VarChar);
-                newCity.Value = city;
-                SqlParameter newCountryCode = new SqlParameter("@countryCode", SqlDbType.VarChar);
-                newCountryCode.Value = countryCode;
-                SqlParameter newEmail = new SqlParameter("@email", SqlDbType.VarChar);
-                newEmail.Value = email;
-                SqlParameter newPhoneNumber = new SqlParameter("@phoneNumber", SqlDbType.VarChar);
-                newPhoneNumber.Value = phoneNumber;
-                SqlParameter newIsAdmin = new SqlParameter("@isAdmin", SqlDbType.VarChar);
-                newIsAdmin.Value = isAdmin;
-                SqlParameter newIsActive = new SqlParameter("@isActive", SqlDbType.VarChar);
-                newIsActive.Value = isActive;
-
-                SqlParameter customerID = new SqlParameter("@customer_id", SqlDbType.Int);
-                customerID.Direction = ParameterDirection.Output;
-
-                myCommand.Parameters.Add(newUserName);
-                myCommand.Parameters.Add(newUserPassword);
-                myCommand.Parameters.Add(newFirstName);
-                myCommand.Parameters.Add(newLastName);
-                myCommand.Parameters.Add(newStreet);
-                myCommand.Parameters.Add(newZip);
-                myCommand.Parameters.Add(newCity);
-                myCommand.Parameters.Add(newCountryCode);
-                myCommand.Parameters.Add(newEmail);
-                myCommand.Parameters.Add(newPhoneNumber);
-                myCommand.Parameters.Add(newIsAdmin);
-                myCommand.Parameters.Add(newIsActive);
-                myCommand.Parameters.Add(customerID);
-
-                myCommand.ExecuteNonQuery();
-                nID = (int)customerID.Value;
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            finally
-            {
-                myConnection.Close();
-            }
-            return nID;
-        }
-
-
-        public static List<Customer> ReadAllCustomers()
-        {
-            List<Customer> customers = new List<Customer>();
-
-            SqlConnection myConnection = new SqlConnection();
-            myConnection.ConnectionString = source;
             try
             {
                 myConnection.Open();
 
-                SqlCommand myCommand = new SqlCommand("select * from Customer", myConnection);
+                SqlCommand myCommand = new SqlCommand($"select * from OrderDetails where OrderHeadID = {orderHeadID} order by OrderDetailsID asc", myConnection);
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
                 while (myReader.Read())
                 {
-                    customers.Add(new Customer(Convert.ToInt32(myReader["CustomerID"].ToString()), myReader["UserName"].ToString(), myReader["UserPassword"].ToString(),
-                    myReader["FirstName"].ToString(), myReader["LastName"].ToString(), myReader["Street"].ToString(), myReader["Zip"].ToString(), myReader["City"].ToString(),
-                    myReader["CountryCode"].ToString(), myReader["Email"].ToString(), myReader["PhoneNumber"].ToString(), Convert.ToBoolean(myReader["IsAdmin"]), Convert.ToBoolean(myReader["IsActive"])));
-                }
+                    int OrderDetailsID = Convert.ToInt32(myReader["OrderDetailsID"].ToString());
+                    int OrderHeadID = Convert.ToInt32(myReader["OrderHeadID"].ToString());
+                    int ArticleID = Convert.ToInt32(myReader["ArticleID"].ToString());
+                    decimal Price = Convert.ToDecimal(myReader["Price"].ToString());
+                    int NumberOfArticles = Convert.ToInt32(myReader["NumberOfArticles"].ToString());
 
+                    orderDetails.Add(new OrderDetail(OrderDetailsID, OrderHeadID, ArticleID, Price, NumberOfArticles));
+
+                }
 
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.Message);
-
             }
             finally
             {
                 myConnection.Close();
             }
-            return customers;
+            return orderDetails;
         }
 
-    }
+        // ReadOrderDetail()
+
+        public void UpdateOrderDetail()
+        {
+            //return TODO;
+        }
+
+        // DeleteOrderDetail()
+    }   
 }
 
 
