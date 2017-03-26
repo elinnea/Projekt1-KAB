@@ -606,7 +606,40 @@ namespace ClassLibraryKAB
         }
 
         // DeleteOrderDetail()
-    }   
+
+
+        //LOGIN. Function that returns a CustomerID if the username/password combination exist and -1 if not
+
+        public static int VerifyUsernamePasswordCombination(string username, string password)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+            try
+
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand("SELECT CustomerID FROM Customer WHERE UserName = @name AND UserPassword = @password", myConnection);
+                myCommand.Parameters.Add("@name", SqlDbType.VarChar);
+                myCommand.Parameters["@name"].Value = username;
+                myCommand.Parameters.Add("@password", SqlDbType.VarChar);
+                myCommand.Parameters["@password"].Value = password;
+
+                var x = myCommand.ExecuteReader();
+                if (x.Read())
+                {
+                    return Convert.ToInt32(x[0]);
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+        }
+    }
 }
 
 

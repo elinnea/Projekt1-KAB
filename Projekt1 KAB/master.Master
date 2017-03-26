@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -12,7 +13,6 @@
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        HELLO WORLD
         </asp:ContentPlaceHolder>
     </div>
     </form>
