@@ -4,7 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <asp:Label ID="Label1" runat="server"></asp:Label>
+
+        <h2>Kundnummer:<asp:Label ID="Label1" runat="server"></asp:Label></h2>
+        <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+    </div>
+    <div>
         <asp:Button ID="Button1" runat="server" Height="47px" OnClick="Button1_Click"
             Text="Logout" Width="92px" />
     </div>

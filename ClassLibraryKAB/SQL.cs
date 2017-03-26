@@ -422,34 +422,36 @@ namespace ClassLibraryKAB
             return orderHeads;
         }
 
-        public static OrderHead ReadOrderHead(int orderHeadID)
+        public static List<OrderHead> ReadOrderHead(int CustomerID)
         {
+            List<OrderHead> orderHeads = new List<OrderHead>();
+
             SqlConnection myConnection = new SqlConnection(source);
 
             try
             {
                 myConnection.Open();
 
-                SqlCommand myCommand = new SqlCommand();
-                myCommand.Connection = myConnection;
-                myCommand.CommandText = $"select * from OrderHead where OrderHeadID = {orderHeadID}";
+                SqlCommand myCommand = new SqlCommand("SELECT * FROM OrderHead WHERE CustomerID = @cid", myConnection);
+                myCommand.Parameters.Add("@cid", SqlDbType.Int).Value = CustomerID;
 
-                SqlDataReader myReader;
-                myReader = myCommand.ExecuteReader();
-
-                myReader.Read();
-
-                return (new OrderHead(
-                                                (Convert.ToInt32(myReader["OrderHeadID"].ToString())),
-                                                (Convert.ToInt32(myReader["CustomerID"].ToString())),
-                                                (Convert.ToDecimal(myReader["Discount"].ToString())),
-                                                myReader["OrderDate"].ToString(),
-                                                myReader["OrderStatus"].ToString()));
+                SqlDataReader reader = myCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                        orderHeads.Add(new OrderHead(
+                                                    (Convert.ToInt32(reader["OrderHeadID"].ToString())),
+                                                    (Convert.ToInt32(reader["CustomerID"].ToString())),
+                                                    (Convert.ToDecimal(reader["Discount"].ToString())),
+                                                    reader["OrderDate"].ToString(),
+                                                    reader["OrderStatus"].ToString()));
+                }
             }
+
             finally
             {
                 myConnection.Close();
             }
+            return orderHeads;
         }
 
         //UpdateOrderHead stored procedure not ready!

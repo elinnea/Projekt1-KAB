@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibraryKAB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,16 @@ namespace Projekt1_KAB
         protected void Page_Load(object sender, EventArgs e)
         {
             Label1.Text = Session["id"].ToString();
+            int customerID = Convert.ToInt32(Session["id"].ToString());
+
+            List<OrderHead> orderHeads = ClassLibraryKAB.SQL.ReadOrderHead(customerID);
+
+            foreach (var orderHead in orderHeads)
+            {
+                // Change to listbox? literal only takes one orderhead
+                Literal1.Text = ($"{orderHead.OrderHeadID}, {orderHead.CustomerID}, {orderHead.Discount}, {orderHead.OrderDate}, {orderHead.OrderStatus}");
+            }
+          
         }
 
         // If you click logout your session will be lost and you will
