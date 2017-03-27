@@ -16,7 +16,11 @@ namespace Projekt1_KAB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClearTextBoxesAndUncheckCheckBoxes();
+            if (!IsPostBack)
+            {
+                ClearTextBoxesAndUncheckCheckBoxes();
+            }
+            
         }
 
         protected void ButtonAddArticle_Click(object sender, EventArgs e)
@@ -73,7 +77,7 @@ namespace Projekt1_KAB
             {
                 Article myArticle = articles.ElementAt(index);
 
-                LabelArticleID.Text = myArticle.ArticleID.ToString(); 
+                LabelArticleID.Text = myArticle.ArticleID.ToString();
                 TextBoxArticleName.Text = myArticle.ArticleName;
                 TextBoxArticlePrice.Text = myArticle.ArticlePrice.ToString();
                 TextBoxArticleCategory.Text = myArticle.ArticleCategory;
@@ -98,6 +102,38 @@ namespace Projekt1_KAB
                     CheckBoxIsInStock.Checked = false;
                 }
             }
+        }
+
+        protected void ButtonUpdateArticle_Click(object sender, EventArgs e)
+        {
+            string articleName = TextBoxArticleName.Text;
+            double articlePrice = Convert.ToDouble(TextBoxArticlePrice.Text);
+            string articleCategory = TextBoxArticleCategory.Text;
+            string articleDescription = TextBoxArticleDescription.Text;
+            bool isActive;
+            bool isInStock;
+
+            if (CheckBoxIsActive.Checked)
+            {
+                isActive = true;
+            }
+            else
+            {
+                isActive = false;
+            }
+
+
+            if (CheckBoxIsInStock.Checked)
+            {
+                isInStock = true;
+            }
+            else
+            {
+                isInStock = false;
+            }
+
+
+            ClassLibraryKAB.SQL.UpdateArticle(articleName, articlePrice, articleCategory, articleDescription, isActive, isInStock);
         }
     }
 }

@@ -17,15 +17,15 @@ namespace ClassLibraryKAB
         public bool IsInStock { get; set; }
 
 
-        //public Article(string articleName, decimal articlePrice, string articleCategory, string articleDescription, char isActive, char isInStock)
-        //{            
-        //    ArticleName = articleName;
-        //    ArticlePrice = articlePrice;
-        //    ArticleCategory = articleCategory;
-        //    ArticleDescription = articleDescription;
-        //    IsActive = isActive;
-        //    IsInStock = isInStock;
-        //}
+        public Article(string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool isInStock)
+        {
+            ArticleName = articleName;
+            ArticlePrice = articlePrice;
+            ArticleCategory = articleCategory;
+            ArticleDescription = articleDescription;
+            IsActive = isActive;
+            IsInStock = isInStock;
+        }
 
         public Article(int articleID, string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool isInStock)
         {
