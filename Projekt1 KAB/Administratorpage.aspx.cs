@@ -12,6 +12,7 @@ namespace Projekt1_KAB
     {
         bool isActive = true;
         bool IsInStock = true;
+        List<Article> articles = new List<Article>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,6 +51,29 @@ namespace Projekt1_KAB
             isActive = true;
             IsInStock = true;
 
+        }
+
+        protected void ButtonReadArticles_Click(object sender, EventArgs e)
+        {
+            articles = ClassLibraryKAB.SQL.ReadArticles();
+
+            foreach (Article article in articles)
+            {
+                ListBoxArticles.Items.Add($"{article.ArticleName}");
+            }
+        }
+
+        protected void ListBoxArticles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            articles = ClassLibraryKAB.SQL.ReadArticles();
+            int index = ListBoxArticles.SelectedIndex;
+
+            if (index >= 0)
+            {
+                Article myArticle = articles.ElementAt(index);
+
+                TextBoxArticleName.Text = myArticle.ArticleName;
+            }
         }
     }
 }

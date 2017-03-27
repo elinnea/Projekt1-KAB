@@ -184,7 +184,7 @@ namespace ClassLibraryKAB
             return newID;
         }
 
-        public List<Article> ReadArticles()
+        public static List<Article> ReadArticles()
         {
             List<Article> articles = new List<Article>();
             SqlConnection myConnection = new SqlConnection(source);
