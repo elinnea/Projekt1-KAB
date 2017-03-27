@@ -10,7 +10,7 @@ namespace ClassLibraryKAB
 {
     public class SQL
     {
-        static string source = "Data Source=.;Initial Catalog=KontorsprylarAB;Integrated Security=True";
+        static string source = "Data Source=.;Initial Catalog=KAB;Integrated Security=True";
 
         // CRUD for the Customer Table
 
@@ -184,7 +184,7 @@ namespace ClassLibraryKAB
             return newID;
         }
 
-        public List<Article> ReadArticles()
+        public static List<Article> ReadArticles()
         {
             List<Article> articles = new List<Article>();
             SqlConnection myConnection = new SqlConnection(source);

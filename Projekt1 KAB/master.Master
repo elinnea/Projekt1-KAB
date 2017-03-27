@@ -99,6 +99,7 @@
         </div>
     </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <a href="index.aspx">index.aspx</a>
             </asp:ContentPlaceHolder>
         </div>
     </form>
