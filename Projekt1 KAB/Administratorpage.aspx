@@ -70,7 +70,7 @@
             <td>&nbsp;</td>
             <td>
                 <asp:Button ID="ButtonAddArticle" runat="server" Text="Lägg till" OnClick="ButtonAddArticle_Click" />
-                <asp:Button ID="ButtonUpdateArticle" runat="server" Text="Ändra" />
+                <asp:Button ID="ButtonUpdateArticle" runat="server" Text="Ändra" OnClick="ButtonUpdateArticle_Click" />
             </td>
             <td>&nbsp;</td>
         </tr>
