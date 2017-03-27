@@ -24,7 +24,7 @@ namespace Projekt1_KAB
                 html += $"<div class=\"col-sm-4\"><div class=\"panel panel-primary\">";
                 html += $"<div class=\"panel-heading\">{item.ArticleName}</div>";
                 html += $"<div class=\"panel-body\">";
-                html += $"<img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\"></div>";
+                html += $"<img src=\"{item.ArticleImage}\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\"></div>";
                 html += $"<div class=\"panel - footer\">{item.ArticlePrice}";
                 html += $"<asp:Button ID=\"ButtonAddToCart\" runat=\"server\" Text=\"KÖP\" Onclick=\"ButtonAddToCart_Click\"/>";
                 html += $"</div></div></div>";

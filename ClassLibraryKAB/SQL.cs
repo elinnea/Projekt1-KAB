@@ -205,7 +205,8 @@ namespace ClassLibraryKAB
                     myReader["ArticleCategory"].ToString(),
                     myReader["ArticleDescription"].ToString(),
                     Convert.ToBoolean(myReader["IsActive"].ToString()),
-                    Convert.ToBoolean(myReader["IsInStock"].ToString())
+                    Convert.ToBoolean(myReader["IsInStock"].ToString()),
+                    myReader["ArticleImage"].ToString()
                     ));
                 }
 
@@ -247,7 +248,9 @@ namespace ClassLibraryKAB
                     myReader["ArticleCategory"].ToString(),
                     myReader["ArticleDescription"].ToString(),
                     Convert.ToBoolean(myReader["IsActive"].ToString()),
-                    Convert.ToBoolean(myReader["IsInStock"].ToString()));
+                    Convert.ToBoolean(myReader["IsInStock"].ToString()),
+                    myReader["ArticleImage"].ToString()
+                    );
                 }
 
             }
@@ -287,7 +290,8 @@ namespace ClassLibraryKAB
                     myReader["ArticleCategory"].ToString(),
                     myReader["ArticleDescription"].ToString(),
                     Convert.ToBoolean(myReader["IsActive"].ToString()),
-                    Convert.ToBoolean(myReader["IsInStock"].ToString())
+                    Convert.ToBoolean(myReader["IsInStock"].ToString()),
+                    myReader["ArticleImage"].ToString()
                     ));
                 }
 

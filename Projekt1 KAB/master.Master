@@ -14,8 +14,8 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <%--<form id="form1" runat="server">--%>
-        <%--<div class="section glyphicon-fullscreen bridge-section">--%>
+<%--    <form id="form1" runat="server">--%>
+<%--        <div class="section glyphicon-fullscreen bridge-section">--%>
         <ul class="nav navbar-nav navbar-right" style="padding-right:35px;">
             <li><a href="#"><span class="glyphicon glyphicon-user" style="font-size:15px;"></span> Registera dig</a></li>
             <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in" style="font-size:15px;"></span> Logga in</a></li>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="input-group">
+                    <div class="input-group" >
                         <input type="text" class="form-control" placeholder="Search" />
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit">
@@ -47,7 +47,7 @@
             </form>
         </div>
 
-        <%--            </div>--%>
+<%--        </div>--%>
 
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -57,7 +57,15 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.aspx">Hem</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Produkter
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Erbjudande
+        <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Veckans deal</a></li>
+                                <li><a href="#">3 för 2</a></li>
+                            </ul>
+                        </li>
+                                           <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pärmar & register
         <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Pärmar & register</a></li>
@@ -65,7 +73,24 @@
                                 <li><a href="#">Häftapparater</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Page 2</a></li>
+                                        <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pennor
+        <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Bläckpennor</a></li>
+                                <li><a href="#">Blyertspennor</a></li>
+                                <li><a href="#">Färgpennor</a></li>
+                            </ul>
+                        </li>
+                                        <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Häftapparater
+        <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Häftaparater</a></li>
+                                <li><a href="#">Häftklammar</a></li>
+                                <li><a href="#">produkt 3</a></li>
+                            </ul>
+                        </li>
                     </ul>
 <%--                    <ul class="navbar-form navbar-left">
                         <div class="input-group">
@@ -124,7 +149,7 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>--%>
-
+<%--        </form>--%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 <a href="index.aspx">index.aspx</a>
             </asp:ContentPlaceHolder>
