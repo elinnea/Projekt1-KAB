@@ -104,36 +104,38 @@ namespace Projekt1_KAB
             }
         }
 
-        //protected void ButtonUpdateArticle_Click(object sender, EventArgs e)
-        //{
-        //    string articleName = TextBoxArticleName.Text;
-        //    double articlePrice = Convert.ToDouble(TextBoxArticlePrice.Text);
-        //    string articleCategory = TextBoxArticleCategory.Text;
-        //    string articleDescription = TextBoxArticleDescription.Text;
-        //    bool isActive;
-        //    bool isInStock;
+        protected void ButtonUpdateArticle_Click(object sender, EventArgs e)
+        {
 
-        //    if (CheckBoxIsActive.Checked)
-        //    {
-        //        isActive = true;
-        //    }
-        //    else
-        //    {
-        //        isActive = false;
-        //    }
+            int articleID = Convert.ToInt32(TextBoxArticleName.Text);
+            string articleName = TextBoxArticleName.Text;
+            double articlePrice = Convert.ToDouble(TextBoxArticlePrice.Text);
+            string articleCategory = TextBoxArticleCategory.Text;
+            string articleDescription = TextBoxArticleDescription.Text;
+            bool isActive;
+            bool isInStock;
 
-
-        //    if (CheckBoxIsInStock.Checked)
-        //    {
-        //        isInStock = true;
-        //    }
-        //    else
-        //    {
-        //        isInStock = false;
-        //    }
+            if (CheckBoxIsActive.Checked)
+            {
+                isActive = true;
+            }
+            else
+            {
+                isActive = false;
+            }
 
 
-        //    ClassLibraryKAB.SQL.UpdateArticle(articleName, articlePrice, articleCategory, articleDescription, isActive, isInStock);
-        //}
+            if (CheckBoxIsInStock.Checked)
+            {
+                isInStock = true;
+            }
+            else
+            {
+                isInStock = false;
+            }
+
+
+            ClassLibraryKAB.SQL.UpdateArticle(articleID, articleName, articlePrice, articleCategory, articleDescription, isActive, isInStock);
+        }
     }
 }
