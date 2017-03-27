@@ -13,10 +13,5 @@ namespace Projekt1_KAB
         {
 
         }
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            // Button that redirects you to the login page (temporary)
-            Response.Redirect("Login.aspx");
-        }
     }
 }
