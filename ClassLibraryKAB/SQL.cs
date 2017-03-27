@@ -10,7 +10,7 @@ namespace ClassLibraryKAB
 {
     public class SQL
     {
-        static string source = "Data Source=.;Initial Catalog=KAB;Integrated Security=True";
+        static string source = "Data Source=.;Initial Catalog=KontorsprylarAB;Integrated Security=True";
 
         // CRUD for the Customer Table
 
