@@ -1,25 +1,24 @@
 ﻿body {
+    font-family: glyphicon;
+    font-size: medium;
 }
 
 #rubrikDiv {
-    background-color: #2a6fde;
-    height: 15em;
-}
-
-#rubrik {
+    background-color: white;
+    /*height: 15em;*/
     text-align: left;
-    color: white;
-    font-size: 5em;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 50px 0 0 0;
+    color: #2a6fde;
+    font-size: 3em;
+    padding: 1em 1em 1em 1em;
 }
 
 .container-fluid {
     background-color: #1f1f21;
-    
-
 }
 
 .form-group navbar-left {
     padding-top: 1em;
+}
+.form-group {
+    padding: 1em 1em 1em 1em; 
 }

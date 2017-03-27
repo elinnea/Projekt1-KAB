@@ -14,20 +14,50 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <div id="rubrikDiv">
-                <h1 id="rubrik">Kontorsprylar AB</h1>
-            </div>
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Kontorsprylar AB</a>
+    <%--<form id="form1" runat="server">--%>
+        <%--<div class="section glyphicon-fullscreen bridge-section">--%>
+        <ul class="nav navbar-nav navbar-right" style="padding-right:35px;">
+            <li><a href="#"><span class="glyphicon glyphicon-user" style="font-size:15px;"></span> Registera dig</a></li>
+            <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in" style="font-size:15px;"></span> Logga in</a></li>
+        </ul>
+        <div class="container">
+            <form class="form-inline">
+                <div class="form-group">
+                    <div id="rubrikDiv">
+                        Kontorsprylar AB
                     </div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.aspx">Hem</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Produkter
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" />
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <a href="#" class="btn btn-info btn-lg">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>Kundvagn
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <%--            </div>--%>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Kontorsprylar AB</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.aspx">Hem</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Produkter
         <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Pärmar & register</a></li>
@@ -68,7 +98,36 @@
                 </div>
             </nav>
 
+            <div class="modal-content">
+                <div class="modal-header"style="background-color:cornflowerblue">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="background-color:cornflowerblue">Logga in</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label><b>Användarnamn</b></label>
+                        <input type="text" placeholder="Ange användarnamn" name="uname" required="required" />
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>Lösenord</b></label>
+                        <input type="password" placeholder="Ange lösenord" name="psw" required="required"/>
+                    </div>
+
+                    <div class="form-group">
+                    <button type="submit">Logga in</button>
+                    <input type="checkbox" checked="checked">Kom ihåg mig 
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <a href="index.aspx">index.aspx</a>
             </asp:ContentPlaceHolder>
         </div>
     </form>
