@@ -50,6 +50,7 @@ namespace Projekt1_KAB
             CheckBoxIsInStock.Checked = false;
             isActive = true;
             IsInStock = true;
+            LabelArticleID.Text = "";
 
         }
 
@@ -72,7 +73,30 @@ namespace Projekt1_KAB
             {
                 Article myArticle = articles.ElementAt(index);
 
+                LabelArticleID.Text = myArticle.ArticleID.ToString(); 
                 TextBoxArticleName.Text = myArticle.ArticleName;
+                TextBoxArticlePrice.Text = myArticle.ArticlePrice.ToString();
+                TextBoxArticleCategory.Text = myArticle.ArticleCategory;
+                TextBoxArticleDescription.Text = myArticle.ArticleDescription;
+
+                if (myArticle.IsActive == true)
+                {
+                    CheckBoxIsActive.Checked = true;
+                }
+                else
+                {
+                    CheckBoxIsActive.Checked = false;
+                }
+
+
+                if (myArticle.IsInStock == true)
+                {
+                    CheckBoxIsInStock.Checked = true;
+                }
+                else
+                {
+                    CheckBoxIsInStock.Checked = false;
+                }
             }
         }
     }

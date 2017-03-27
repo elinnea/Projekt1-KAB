@@ -13,13 +13,13 @@ namespace Projekt1_KAB {
     public partial class Administratorpage {
         
         /// <summary>
-        /// LabelArticleNummer control.
+        /// LabelArticleID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelArticleNummer;
+        protected global::System.Web.UI.WebControls.Label LabelArticleID;
         
         /// <summary>
         /// ButtonReadArticles control.

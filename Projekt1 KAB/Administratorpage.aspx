@@ -16,7 +16,7 @@
         <tr>
             <td>Artikelnummer</td>
             <td>
-                <asp:Label ID="LabelArticleNummer" runat="server" Text=""></asp:Label>
+                <asp:Label ID="LabelArticleID" runat="server" Text="Label"></asp:Label>
             </td>
             <td>
                 <asp:Button ID="ButtonReadArticles" runat="server" OnClick="ButtonReadArticles_Click" Text="Se alla artiklar" />
