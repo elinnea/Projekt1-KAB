@@ -186,6 +186,7 @@ namespace ClassLibraryKAB
 
         public List<Article> ReadArticles()
         {
+            List<Article> articles = new List<Article>();
             SqlConnection myConnection = new SqlConnection(source);
 
             try
@@ -198,13 +199,13 @@ namespace ClassLibraryKAB
                 while (myReader.Read())
                 {
                     articles.Add(new Article(
-                    (int)myReader["ArticleID"],
-                    (string)myReader["ArticleName"],
-                    (decimal)myReader["ArticlePrice"],
-                    (string)myReader["ArticleCategory"],
-                    (string)myReader["ArticleDescription"],
-                    (char)myReader["IsActive"],
-                    (char)myReader["IsInStock"]
+                    Convert.ToInt32(myReader["ArticleID"].ToString()),
+                    myReader["ArticleName"].ToString(),
+                    Convert.ToDecimal(myReader["ArticlePrice"].ToString()),
+                    myReader["ArticleCategory"].ToString(),
+                    myReader["ArticleDescription"].ToString(),
+                    Convert.ToBoolean(myReader["IsActive"].ToString()),
+                    Convert.ToBoolean(myReader["IsInStock"].ToString())
                     ));
                 }
 
@@ -219,41 +220,86 @@ namespace ClassLibraryKAB
             return articles;
         }
 
-        //public Article GetArticle(int articleID) //NOT READY!!!
-        //{
-        //    SqlConnection myConnection = new SqlConnection(source);
-        //    Article myArticle = new Article();
+        public Article GetArticleByID(int inputID)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+            Article myArticle = new Article();
 
-        //    try
-        //    {
-        //        myConnection.Open();
+            try
+            {
+                myConnection.Open();
 
-        //        SqlCommand myCommand = new SqlCommand("select * from Article order by ArticleID asc", myConnection);
-        //        SqlDataReader myReader = myCommand.ExecuteReader();
+                SqlCommand myCommand = new SqlCommand("SearchArticleByID", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;
 
+                SqlParameter articleID = new SqlParameter("@FindArticleByID", SqlDbType.Int);
+                articleID.Value = inputID;
 
-        //        while (myReader.Read())
-        //        {
-        //                myArticle = new Article(
-        //                Convert.ToInt32(myReader["ArticleID"].ToString()),
-        //                myReader["ArticleName"].ToString(),
-        //                Convert.ToDecimal(myReader["ArticlePrice"].ToString()),
-        //                myReader["ArticleCategory"].ToString(),
-        //                myReader["ArticleDescription"].ToString(),
-        //                myReader["IsActive"],
-        //                myReader["IsInStock"]);
-        //        }
+                myCommand.Parameters.Add(articleID);
 
+                SqlDataReader myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    myArticle = new Article(
+                    Convert.ToInt32(myReader["ArticleID"].ToString()),
+                    myReader["ArticleName"].ToString(),
+                    Convert.ToDecimal(myReader["ArticlePrice"].ToString()),
+                    myReader["ArticleCategory"].ToString(),
+                    myReader["ArticleDescription"].ToString(),
+                    Convert.ToBoolean(myReader["IsActive"].ToString()),
+                    Convert.ToBoolean(myReader["IsInStock"].ToString()));
+                }
 
-        //    }
-        //    //catch (Exception ex)
-        //    //{
-        //    //    Console.WriteLine(ex.Message);
-        //    //}
-        //    finally { myConnection.Close(); }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { myConnection.Close(); }
 
-        //    return myArticle;
-        //}
+            return myArticle;
+        }
+
+        public List<Article> GetArticleByName(string inputName)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+            List<Article> articles = new List<Article>();
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand("SearchArticleByName", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter articleName = new SqlParameter("@FindArticleByName", SqlDbType.NVarChar);
+                articleName.Value = "%" + inputName + "%";
+
+                myCommand.Parameters.Add(articleName);
+
+                SqlDataReader myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    articles.Add(new Article(
+                    Convert.ToInt32(myReader["ArticleID"].ToString()),
+                    myReader["ArticleName"].ToString(),
+                    Convert.ToDecimal(myReader["ArticlePrice"].ToString()),
+                    myReader["ArticleCategory"].ToString(),
+                    myReader["ArticleDescription"].ToString(),
+                    Convert.ToBoolean(myReader["IsActive"].ToString()),
+                    Convert.ToBoolean(myReader["IsInStock"].ToString())
+                    ));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { myConnection.Close(); }
+
+            return articles;
+        }
 
         public void UpdateArticle(int ArticleID, string articleName, double articlePrice, string articleCategory, string articleDescription, bool isActive, bool IsInStock)
         {

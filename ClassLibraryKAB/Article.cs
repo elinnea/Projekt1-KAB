@@ -13,8 +13,8 @@ namespace ClassLibraryKAB
         public decimal ArticlePrice { get; set; }
         public string ArticleCategory { get; set; }
         public string ArticleDescription { get; set; }
-        public char IsActive { get; set; }
-        public char IsInStock { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsInStock { get; set; }
 
 
         //public Article(string articleName, decimal articlePrice, string articleCategory, string articleDescription, char isActive, char isInStock)
@@ -27,7 +27,7 @@ namespace ClassLibraryKAB
         //    IsInStock = isInStock;
         //}
 
-        public Article(int articleID, string articleName, decimal articlePrice, string articleCategory, string articleDescription, char isActive, char isInStock)
+        public Article(int articleID, string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool isInStock)
         {
             ArticleName = articleName;
             ArticlePrice = articlePrice;
@@ -43,8 +43,8 @@ namespace ClassLibraryKAB
             ArticlePrice = 0;
             ArticleCategory = "";
             ArticleDescription = "";
-            IsActive = '0';
-            IsInStock = '0';
+            IsActive = false;
+            IsInStock = false;
         }
     }
 }
