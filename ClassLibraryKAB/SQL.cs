@@ -129,7 +129,7 @@ namespace ClassLibraryKAB
 
         List<Article> articles = new List<Article>();
 
-        public static int CreateArticle(string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool IsInStock)
+        public static int CreateArticle(string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool IsInStock, string articleImage)
         {
             SqlConnection myConnection = new SqlConnection(source);
             int newID = 0;
@@ -159,6 +159,9 @@ namespace ClassLibraryKAB
                 SqlParameter newIsInStock = new SqlParameter("@IsInStock", myConnection);
                 newIsInStock.Value = IsInStock;
 
+                SqlParameter newArticleImage = new SqlParameter("@ArticleImage", myConnection);
+                newArticleImage.Value = articleImage;
+
                 SqlParameter newArticleNumber = new SqlParameter("@ArticleID", SqlDbType.Int);
                 newArticleNumber.Direction = ParameterDirection.Output;
 
@@ -169,6 +172,7 @@ namespace ClassLibraryKAB
                 myCommand.Parameters.Add(newIsActive);
                 myCommand.Parameters.Add(newIsInStock);
                 myCommand.Parameters.Add(newArticleNumber);
+                myCommand.Parameters.Add(newArticleImage);
 
 
                 myCommand.ExecuteNonQuery();
@@ -305,7 +309,7 @@ namespace ClassLibraryKAB
             return articles;
         }
 
-        public static void UpdateArticle(int ArticleID, string articleName, double articlePrice, string articleCategory, string articleDescription, bool isActive, bool IsInStock)
+        public static void UpdateArticle(int ArticleID, string articleName, double articlePrice, string articleCategory, string articleDescription, bool isActive, bool IsInStock, string articleImage)
         {
 
             SqlConnection myConnection = new SqlConnection(source);
@@ -338,6 +342,9 @@ namespace ClassLibraryKAB
                 SqlParameter newIsInStock = new SqlParameter("@IsInStock", myConnection);
                 newIsInStock.Value = IsInStock;
 
+                SqlParameter newArticleImage = new SqlParameter("@ArticleImage", myConnection);
+                newArticleImage.Value = articleImage;
+
                 myCommand.Parameters.Add(newArticleNumber);
                 myCommand.Parameters.Add(newArticleName);
                 myCommand.Parameters.Add(newArticlePrice);
@@ -345,6 +352,7 @@ namespace ClassLibraryKAB
                 myCommand.Parameters.Add(newArticleDescription);
                 myCommand.Parameters.Add(newIsActive);
                 myCommand.Parameters.Add(newIsInStock);
+                myCommand.Parameters.Add(newArticleImage);
 
                 myCommand.ExecuteNonQuery();
 

@@ -15,12 +15,12 @@ namespace ClassLibraryKAB
         public string ArticleDescription { get; set; }
         public bool IsActive { get; set; }
         public bool IsInStock { get; set; }
-
         public string ArticleImage { get; set; }
 
 
         public Article(string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool isInStock, string articleImage)
         {
+            
             ArticleName = articleName;
             ArticlePrice = articlePrice;
             ArticleCategory = articleCategory;
@@ -32,6 +32,7 @@ namespace ClassLibraryKAB
 
         public Article(int articleID, string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool isInStock, string articleImage)
         {
+            
             ArticleID = articleID;
             ArticleName = articleName;
             ArticlePrice = articlePrice;
@@ -44,6 +45,7 @@ namespace ClassLibraryKAB
 
         public Article()
         {
+            
             ArticleName = "";
             ArticlePrice = 0;
             ArticleCategory = "";
