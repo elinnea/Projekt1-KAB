@@ -11,7 +11,7 @@ namespace Projekt1_KAB
     public partial class Administratorpage : System.Web.UI.Page
     {
         bool isActive = true;
-        bool IsInStock = true;
+        bool isInStock = true;
         List<Article> articles = new List<Article>();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -29,8 +29,9 @@ namespace Projekt1_KAB
             decimal articlePrice = Convert.ToDecimal(TextBoxArticlePrice.Text);
             string articleCategory = TextBoxArticleCategory.Text;
             string articleDescription = TextBoxArticleDescription.Text;
+            string articleURL = TextBoxURL.Text;
 
-            int aid = ClassLibraryKAB.SQL.CreateArticle(articleName, articlePrice, articleCategory, articleDescription, isActive, IsInStock);
+            int aid = ClassLibraryKAB.SQL.CreateArticle(articleName, articlePrice, articleCategory, articleDescription, isActive, isInStock, articleURL);
             ClearTextBoxesAndUncheckCheckBoxes();
         }
 
@@ -41,7 +42,7 @@ namespace Projekt1_KAB
 
         protected void CheckBoxIsInStock_CheckedChanged(object sender, EventArgs e)
         {
-            IsInStock = false;
+            isInStock = false;
         }
 
         public void ClearTextBoxesAndUncheckCheckBoxes()
@@ -50,10 +51,11 @@ namespace Projekt1_KAB
             TextBoxArticlePrice.Text = "Ange artikelpris";
             TextBoxArticleCategory.Text = "Ange artikelkategori";
             TextBoxArticleDescription.Text = "Ange beskrivning";
+            TextBoxURL.Text = "Ange URL";
             CheckBoxIsActive.Checked = false;
             CheckBoxIsInStock.Checked = false;
             isActive = true;
-            IsInStock = true;
+            isInStock = true;
             LabelArticleID.Text = "";
 
         }
@@ -82,6 +84,7 @@ namespace Projekt1_KAB
                 TextBoxArticlePrice.Text = myArticle.ArticlePrice.ToString();
                 TextBoxArticleCategory.Text = myArticle.ArticleCategory;
                 TextBoxArticleDescription.Text = myArticle.ArticleDescription;
+                TextBoxURL.Text = myArticle.ArticleImage;
 
                 if (myArticle.IsActive == true)
                 {
@@ -112,6 +115,7 @@ namespace Projekt1_KAB
             double articlePrice = Convert.ToDouble(TextBoxArticlePrice.Text);
             string articleCategory = TextBoxArticleCategory.Text;
             string articleDescription = TextBoxArticleDescription.Text;
+            string articleURL = TextBoxURL.Text;
             bool isActive;
             bool isInStock;
 
@@ -135,7 +139,7 @@ namespace Projekt1_KAB
             }
 
 
-            ClassLibraryKAB.SQL.UpdateArticle(articleID, articleName, articlePrice, articleCategory, articleDescription, isActive, isInStock);
+            ClassLibraryKAB.SQL.UpdateArticle(articleID, articleName, articlePrice, articleCategory, articleDescription, isActive, isInStock, articleURL);
         }
     }
 }

@@ -4,9 +4,13 @@
         .auto-style1 {
             height: 22px;
         }
+        .auto-style2 {
+            height: 24px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <form id="form1" runat="server">
     <table style="width:100%;">
         <tr>
             <td>&nbsp;</td>
@@ -46,10 +50,19 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td>Beskrivning</td>
-            <td>
+            <td class="auto-style2">Beskrivning</td>
+            <td class="auto-style2">
                 <asp:TextBox ID="TextBoxArticleDescription" runat="server"></asp:TextBox>
             </td>
+            <td class="auto-style2"></td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="LabelURL" runat="server" Text="URL"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="TextBoxURL" runat="server"></asp:TextBox>
+                </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -75,4 +88,5 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+    </form>
 </asp:Content>
