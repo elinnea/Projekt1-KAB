@@ -1,0 +1,25 @@
+﻿body {
+}
+
+#rubrikDiv {
+    background-color: #2a6fde;
+    height: 15em;
+}
+
+#rubrik {
+    text-align: left;
+    color: white;
+    font-size: 5em;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 50px 0 0 0;
+}
+
+.container-fluid {
+    background-color: #1f1f21;
+    
+
+}
+
+.form-group navbar-left {
+    padding-top: 1em;
+}
