@@ -106,6 +106,8 @@ namespace Projekt1_KAB
 
         protected void ButtonUpdateArticle_Click(object sender, EventArgs e)
         {
+
+            int articleID = Convert.ToInt32(TextBoxArticleName.Text);
             string articleName = TextBoxArticleName.Text;
             double articlePrice = Convert.ToDouble(TextBoxArticlePrice.Text);
             string articleCategory = TextBoxArticleCategory.Text;
@@ -133,7 +135,7 @@ namespace Projekt1_KAB
             }
 
 
-            ClassLibraryKAB.SQL.UpdateArticle(articleName, articlePrice, articleCategory, articleDescription, isActive, isInStock);
+            ClassLibraryKAB.SQL.UpdateArticle(articleID, articleName, articlePrice, articleCategory, articleDescription, isActive, isInStock);
         }
     }
 }

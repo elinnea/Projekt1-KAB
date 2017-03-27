@@ -8,5 +8,5 @@
   <div class="row">
       <asp:Literal ID="dynamicArticles" runat="server"></asp:Literal>
   </div>
-</div><br>
+</div>
 </asp:Content>
