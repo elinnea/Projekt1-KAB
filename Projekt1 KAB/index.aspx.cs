@@ -22,25 +22,21 @@ namespace Projekt1_KAB
             foreach (Article item in articles)
             {
                 html += $"<div class=\"col-sm-4\"><div class=\"panel panel-primary\">";
-                html += $"<div class=\"panel-heading\">{item.ArticleName}</div><div class=\"panel-body\">";
+                html += $"<div class=\"panel-heading\">{item.ArticleName}</div>";
+                html += $"<div class=\"panel-body\">";
                 html += $"<img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\"></div>";
-                html += $"<div class=\"panel - footer\">{item.ArticlePrice}</div></div></div>";
+                html += $"<div class=\"panel - footer\">{item.ArticlePrice}";
+                html += $"<asp:Button ID=\"ButtonAddToCart\" runat=\"server\" Text=\"KÖP\" Onclick=\"ButtonAddToCart_Click\"/>";
+                html += $"</div></div></div>";
             }
             dynamicArticles.Text = html;
-
-            //Article article = mySQL.GetArticleByID(2001);
-
-            //Literal1.Text = article.ArticleName;
-            //Literal2.Text = article.ArticlePrice.ToString();
-
-            //if (article.IsInStock)
-            //{
-            //    CheckBoxInStock.Checked = true;
-            //}
-
-
+            
         }
 
+        protected void ButtonAddToCart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
