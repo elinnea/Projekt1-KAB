@@ -13,7 +13,9 @@
             <td>
                 <asp:Label ID="LabelArticleNummer" runat="server" Text=""></asp:Label>
             </td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+            </td>
         </tr>
         <tr>
             <td>Namn</td>
@@ -61,6 +63,7 @@
             <td>&nbsp;</td>
             <td>
                 <asp:Button ID="ButtonAddArticle" runat="server" Text="Lägg till" OnClick="ButtonAddArticle_Click" />
+                <asp:Button ID="ButtonUpdateArticle" runat="server" Text="Ändra" />
             </td>
             <td>&nbsp;</td>
         </tr>
