@@ -29,6 +29,7 @@ namespace ClassLibraryKAB
 
         public Article(int articleID, string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool isInStock)
         {
+            ArticleID = articleID;
             ArticleName = articleName;
             ArticlePrice = articlePrice;
             ArticleCategory = articleCategory;

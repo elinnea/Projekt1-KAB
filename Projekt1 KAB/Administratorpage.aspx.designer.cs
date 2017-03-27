@@ -13,22 +13,22 @@ namespace Projekt1_KAB {
     public partial class Administratorpage {
         
         /// <summary>
-        /// LabelArticleNummer control.
+        /// LabelArticleID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelArticleNummer;
+        protected global::System.Web.UI.WebControls.Label LabelArticleID;
         
         /// <summary>
-        /// Literal1 control.
+        /// ButtonReadArticles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal1;
+        protected global::System.Web.UI.WebControls.Button ButtonReadArticles;
         
         /// <summary>
         /// TextBoxArticleName control.
@@ -38,6 +38,15 @@ namespace Projekt1_KAB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxArticleName;
+        
+        /// <summary>
+        /// ListBoxArticles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBoxArticles;
         
         /// <summary>
         /// TextBoxArticlePrice control.

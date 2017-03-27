@@ -27,32 +27,40 @@ namespace TestConsole // Used for testing the functionalities of the ClassLibrar
 
             // ORDERHEAD
 
-            int orderHeadID = ClassLibraryKAB.SQL.CreateOrderHead(3005, 0, "170505", "In stock");
+            //int orderHeadID = ClassLibraryKAB.SQL.CreateOrderHead(3005, 0, "170505", "In stock");
 
-            Console.WriteLine($"An orderhead with the ID {orderHeadID} was created");
+            //Console.WriteLine($"An orderhead with the ID {orderHeadID} was created");
 
-        //    List<OrderHead> orderHeads = ClassLibraryKAB.SQL.ReadOrderHeads();
+            //    List<OrderHead> orderHeads = ClassLibraryKAB.SQL.ReadOrderHeads();
 
-        //    Console.WriteLine("OrderHeads:");
-        //    foreach (OrderHead orderHead in orderHeads)
-        //    {
-        //        Console.WriteLine($"{orderHead.OrderHeadID}, {orderHead.CustomerID}, {orderHead.Discount}, {orderHead.OrderDate}, {orderHead.OrderStatus}");
+            //    Console.WriteLine("OrderHeads:");
+            //    foreach (OrderHead orderHead in orderHeads)
+            //    {
+            //        Console.WriteLine($"{orderHead.OrderHeadID}, {orderHead.CustomerID}, {orderHead.Discount}, {orderHead.OrderDate}, {orderHead.OrderStatus}");
 
-        //    }
+            //    }
 
-        //    List<OrderHead> orderHeads2 = ClassLibraryKAB.SQL.ReadOrderHead(1003);
+            //    List<OrderHead> orderHeads2 = ClassLibraryKAB.SQL.ReadOrderHead(1003);
 
-        //    foreach (OrderHead orderHead in orderHeads2)
-        //    {
-        //        Console.WriteLine($"{orderHead.OrderHeadID}, {orderHead.CustomerID}, {orderHead.Discount}, {orderHead.OrderDate}, {orderHead.OrderStatus}");
+            //    foreach (OrderHead orderHead in orderHeads2)
+            //    {
+            //        Console.WriteLine($"{orderHead.OrderHeadID}, {orderHead.CustomerID}, {orderHead.Discount}, {orderHead.OrderDate}, {orderHead.OrderStatus}");
 
-        //    }
+            //    }
 
-        //    ClassLibraryKAB.SQL.UpdateOrderHead(1002, 3006, 0, "170505", "Not in stock");
+            //    ClassLibraryKAB.SQL.UpdateOrderHead(1002, 3006, 0, "170505", "Not in stock");
 
-        //    ClassLibraryKAB.SQL.DeleateOrderHead(1008);
+            //    ClassLibraryKAB.SQL.DeleateOrderHead(1008);
 
-        //    Console.ReadKey();
+            //    Console.ReadKey();
+
+            List<Article> articles = ClassLibraryKAB.SQL.ReadArticles();
+
+            foreach (var item in articles)
+            {
+                Console.WriteLine(item.ArticleID);
+                Console.ReadLine();
+            }
         }
     }
 }

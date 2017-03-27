@@ -12,6 +12,7 @@ namespace Projekt1_KAB
     {
         bool isActive = true;
         bool IsInStock = true;
+        List<Article> articles = new List<Article>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -49,7 +50,54 @@ namespace Projekt1_KAB
             CheckBoxIsInStock.Checked = false;
             isActive = true;
             IsInStock = true;
+            LabelArticleID.Text = "";
 
+        }
+
+        protected void ButtonReadArticles_Click(object sender, EventArgs e)
+        {
+            articles = ClassLibraryKAB.SQL.ReadArticles();
+
+            foreach (Article article in articles)
+            {
+                ListBoxArticles.Items.Add($"{article.ArticleName}");
+            }
+        }
+
+        protected void ListBoxArticles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            articles = ClassLibraryKAB.SQL.ReadArticles();
+            int index = ListBoxArticles.SelectedIndex;
+
+            if (index >= 0)
+            {
+                Article myArticle = articles.ElementAt(index);
+
+                LabelArticleID.Text = myArticle.ArticleID.ToString(); 
+                TextBoxArticleName.Text = myArticle.ArticleName;
+                TextBoxArticlePrice.Text = myArticle.ArticlePrice.ToString();
+                TextBoxArticleCategory.Text = myArticle.ArticleCategory;
+                TextBoxArticleDescription.Text = myArticle.ArticleDescription;
+
+                if (myArticle.IsActive == true)
+                {
+                    CheckBoxIsActive.Checked = true;
+                }
+                else
+                {
+                    CheckBoxIsActive.Checked = false;
+                }
+
+
+                if (myArticle.IsInStock == true)
+                {
+                    CheckBoxIsInStock.Checked = true;
+                }
+                else
+                {
+                    CheckBoxIsInStock.Checked = false;
+                }
+            }
         }
     }
 }
