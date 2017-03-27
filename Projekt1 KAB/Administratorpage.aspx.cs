@@ -15,7 +15,7 @@ namespace Projekt1_KAB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ClearTextBoxesAndUncheckCheckBoxes();
         }
 
         protected void ButtonAddArticle_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace Projekt1_KAB
             string articleDescription = TextBoxArticleDescription.Text;
 
             int aid = ClassLibraryKAB.SQL.CreateArticle(articleName, articlePrice, articleCategory, articleDescription, isActive, IsInStock);
-            ClearTextBoxesAndCheckBoxes();
+            ClearTextBoxesAndUncheckCheckBoxes();
         }
 
         protected void CheckBoxIsActive_CheckedChanged(object sender, EventArgs e)
@@ -39,12 +39,12 @@ namespace Projekt1_KAB
             IsInStock = false;
         }
 
-        public void ClearTextBoxesAndCheckBoxes()
+        public void ClearTextBoxesAndUncheckCheckBoxes()
         {
-            TextBoxArticleName.Text = "";
-            TextBoxArticlePrice.Text = "";
-            TextBoxArticleCategory.Text = "";
-            TextBoxArticleDescription.Text = "";
+            TextBoxArticleName.Text = "Ange artikelnamn";
+            TextBoxArticlePrice.Text = "Ange artikelpris";
+            TextBoxArticleCategory.Text = "Ange artikelkategori";
+            TextBoxArticleDescription.Text = "Ange beskrivning";
             CheckBoxIsActive.Checked = false;
             CheckBoxIsInStock.Checked = false;
             isActive = true;

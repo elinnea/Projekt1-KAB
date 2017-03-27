@@ -11,7 +11,7 @@
         <tr>
             <td>Artikelnummer</td>
             <td>
-                <asp:Label ID="LabelArticleNummer" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="LabelArticleNummer" runat="server" Text=""></asp:Label>
             </td>
             <td>&nbsp;</td>
         </tr>
