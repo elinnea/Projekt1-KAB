@@ -52,7 +52,15 @@
                         
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Kundvagn</a></li>
+                           <li class="dropdown">
+                            <a class="dropdown-toggle glyphicon glyphicon-shopping-cart" data-toggle="dropdown" href="#">Kundvagn
+        <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Produkt 1</a></li>
+                                <li><a href="#">Produkt 2</a></li>
+                                <li><a href="#">Produkt 3</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registera dig</a></li>
                         <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Logga in</a></li>
                     </ul>
