@@ -129,7 +129,7 @@ namespace ClassLibraryKAB
 
         List<Article> articles = new List<Article>();
 
-        public int CreateArticle(string articleName, decimal articlePrice, string articleCategory, string articleDescription, char isActive, char IsInStock)
+        public static int CreateArticle(string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool IsInStock)
         {
             SqlConnection myConnection = new SqlConnection(source);
             int newID = 0;
