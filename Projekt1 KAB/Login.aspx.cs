@@ -42,7 +42,7 @@ namespace Projekt1_KAB
                             
                 Session["id"] = correct.ToString();
                 Customer user = SQL.GetCustomer(correct);
-                Session["user"] = user;
+                //Session["user"] = user;
                 bool admin = user.IsAdmin;
 
                 if (admin)
@@ -53,10 +53,9 @@ namespace Projekt1_KAB
                 {
                     Response.Redirect("Customerpage.aspx");
                 }
-                              
+                
+                //Session.RemoveAll();
             }
         }
-
-       
     }
 }
