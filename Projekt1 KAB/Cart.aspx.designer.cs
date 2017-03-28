@@ -10,24 +10,15 @@
 namespace Projekt1_KAB {
     
     
-    public partial class article {
+    public partial class Cart {
         
         /// <summary>
-        /// articleContent control.
+        /// Literal1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal articleContent;
-        
-        /// <summary>
-        /// CheckBoxInStock control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBoxInStock;
+        protected global::System.Web.UI.WebControls.Literal Literal1;
     }
 }

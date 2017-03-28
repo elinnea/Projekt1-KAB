@@ -3,4 +3,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
     <asp:literal id="articleContent" runat="server"></asp:literal>
+    <asp:CheckBox ID="CheckBoxInStock" runat="server" />
 </asp:Content>
