@@ -117,7 +117,52 @@ namespace ClassLibraryKAB
             return customers;
         }
 
-        // ReadCustomer(int customerID)
+        public static Customer GetCustomer(int customerID)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+            Customer user = new Customer();
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand("GetUserByID", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter newCustomerID = new SqlParameter("@FindUserByID", SqlDbType.Int);
+                newCustomerID.Value = customerID;
+
+                myCommand.Parameters.Add(newCustomerID);
+
+                SqlDataReader myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    user = new Customer(
+                    Convert.ToInt32(myReader["CustomerID"].ToString()),
+                    myReader["UserName"].ToString(),
+                    myReader["UserPassword"].ToString(),
+                    myReader["FirstName"].ToString(),
+                    myReader["Lastname"].ToString(),
+                    myReader["Street"].ToString(),
+                    myReader["Zip"].ToString(),
+                    myReader["City"].ToString(),
+                    myReader["CountryCode"].ToString(),
+                    myReader["Email"].ToString(),
+                    myReader["PhoneNumber"].ToString(),
+                    Convert.ToBoolean(myReader["IsAdmin"].ToString()),
+                    Convert.ToBoolean(myReader["IsActive"].ToString())
+                    );
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { myConnection.Close(); }
+
+            return user;
+        }
 
         // UpdateCustomer()
 

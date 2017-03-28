@@ -46,6 +46,24 @@ namespace ClassLibraryKAB
             IsActive = isActive;
 
         }
+
+        public Customer()
+        {
+            CustomerID = 0;
+            UserName = "";
+            UserPassword = "";
+            FirstName = "";
+            LastName = "";
+            Street = "";
+            Zip = "";
+            City = "";
+            CountryCode = "";
+            Email = "";
+            PhoneNumber = "";
+            IsAdmin = false;
+            IsActive = false;
+        }
+
         public override string ToString()
         {
             return $"CustomerID: {CustomerID}, UserName: {UserName}, UserPassword: {UserPassword}, FirstName: {FirstName}, LastName: {LastName}, Street: {Street}, Zip: {Zip}, City: {City}, CountryCode: {CountryCode}, Email: {Email}, PhoneNumber: {PhoneNumber}";

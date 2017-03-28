@@ -24,7 +24,7 @@
             <form class="form-inline">
                 <div class="form-group">
                     <div id="rubrikDiv">
-                        <img src="Image/Logga.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+                        <img src="Image/Logga.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236"/>
                         
                     </div>
                 </div>

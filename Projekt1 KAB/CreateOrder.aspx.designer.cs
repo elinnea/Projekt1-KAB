@@ -10,16 +10,7 @@
 namespace Projekt1_KAB {
     
     
-    public partial class Cart {
-        
-        /// <summary>
-        /// formCart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formCart;
+    public partial class OrderHead {
         
         /// <summary>
         /// Literal1 control.
@@ -31,21 +22,12 @@ namespace Projekt1_KAB {
         protected global::System.Web.UI.WebControls.Literal Literal1;
         
         /// <summary>
-        /// dynamicCart control.
+        /// LiteralCustomerID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal dynamicCart;
-        
-        /// <summary>
-        /// goToCreateOrder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button goToCreateOrder;
+        protected global::System.Web.UI.WebControls.Literal LiteralCustomerID;
     }
 }
