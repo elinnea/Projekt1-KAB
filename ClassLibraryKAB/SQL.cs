@@ -267,7 +267,7 @@ namespace ClassLibraryKAB
             return myArticle;
         }
 
-        public List<Article> GetArticleByName(string inputName)
+        public static List<Article> GetArticleByName(string inputName)
         {
             SqlConnection myConnection = new SqlConnection(source);
             List<Article> articles = new List<Article>();
