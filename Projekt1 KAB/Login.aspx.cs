@@ -27,7 +27,7 @@ namespace Projekt1_KAB
 
             if (correct == -1)
             {
-                Label1.Text = "Your username and password is incorrect";
+                Label1.Text = "Your username or password is incorrect";
                 Label1.ForeColor = System.Drawing.Color.Red;
             }
             else

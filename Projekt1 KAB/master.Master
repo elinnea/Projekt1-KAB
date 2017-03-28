@@ -14,7 +14,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-<%--    <form id="form1" runat="server">--%>
+    <form id="form1" runat="server">
 <%--        <div class="section glyphicon-fullscreen bridge-section">--%>
         <ul class="nav navbar-nav navbar-right" style="padding-right:35px;">
             <li><a href="#"><span class="glyphicon glyphicon-user" style="font-size:15px;"></span> Registera dig</a></li>
@@ -154,6 +154,6 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 <a href="index.aspx">index.aspx</a>
             </asp:ContentPlaceHolder>
-<%--    </form>--%>
+    </form>
 </body>
 </html>
