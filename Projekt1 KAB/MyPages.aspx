@@ -4,7 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="formMyPages" runat="server">
     <table id="regtable" style="text-align: left">
-       <asp:Label ID="LabelRegisterBox" style="font:bold 18px verdana; text-align: left" runat="server" Text="Mina uppgifter"></asp:Label>
+       
+        <asp:Label ID="LabelWelcome" style="font:bold 18px verdana; text-align: center" runat="server"></asp:Label><br />
+        <asp:Label ID="LabelRegisterBox" style="font:bold 16px verdana; text-align: left" runat="server" Text="Mina uppgifter"></asp:Label>
 
        <tr><td>Kundnummer: </td><td><asp:Label ID="LabelCustomerID" runat="server"></asp:Label></td></tr>
        <tr><td>Användarnamn: </td><td><asp:Label ID="LabelUserName" runat="server"></asp:Label></td></tr>

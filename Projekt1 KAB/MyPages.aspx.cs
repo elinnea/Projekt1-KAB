@@ -16,7 +16,8 @@ namespace Projekt1_KAB
             Customer user = SQL.GetCustomer(Convert.ToInt32(Session["id"]));
 
             if (Session["id"] != null)
-            {                
+            {
+                LabelWelcome.Text = $"Välkommen {user.FirstName} {user.LastName}";
                 LabelCustomerID.Text = user.CustomerID.ToString();
                 LabelUserName.Text = user.UserName;
                 TextBoxPassWord.Text = user.UserPassword;

@@ -10,7 +10,7 @@
         <asp:Label ID="LabelRegisterBox" style="font:bold 18px verdana; text-align: left" runat="server" Text="Registrera dig som kund"></asp:Label>
 
         <tr><td>Användarnamn: </td><td><asp:TextBox class="textboxes" ID="TextBoxUserName" placeholder=" Ange användarnamn" runat="server"></asp:TextBox></td></tr>
-        <tr><td>Lösenord: </td><td><asp:TextBox class="textboxes" ID="TextBoxPassWord" placeholder=" Lösenord, minst sex tecken" runat="server"></asp:TextBox></td></tr>
+        <tr><td>Lösenord: </td><td><asp:TextBox class="textboxes" ID="TextBoxPassWord" TextMode="Password" placeholder=" Lösenord, minst sex tecken" runat="server"></asp:TextBox></td></tr>
         <tr><td>Förnamn: </td><td><asp:TextBox class="textboxes" ID="TextBoxFirstName" placeholder=" Ange förnamn" runat="server"></asp:TextBox></td></tr>
         <tr><td>Efternamn: </td><td><asp:TextBox class="textboxes" ID="TextBoxLastName" placeholder=" Ange efternamn" runat="server"></asp:TextBox></td></tr>
         <tr><td>Adress: </td><td><asp:TextBox class="textboxes" ID="TextBoxAdress" placeholder=" Ange adress" runat="server"></asp:TextBox></td></tr>

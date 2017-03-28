@@ -11,6 +11,22 @@ namespace Projekt1_KAB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool isUserLoggedOn = Session["id"] != null;
+
+            if (isUserLoggedOn)
+            {
+                HyperLinkLogin.Visible = false;
+                HyperLinkReg.Visible = false;
+                HyperLinkMyPages.Visible = true;
+                HyperLinkLogout.Visible = true;
+            }
+            else
+            {
+                HyperLinkLogin.Visible = true;
+                HyperLinkReg.Visible = true;
+                HyperLinkMyPages.Visible = false;
+                HyperLinkLogout.Visible = false;
+            }
 
         }
     }
