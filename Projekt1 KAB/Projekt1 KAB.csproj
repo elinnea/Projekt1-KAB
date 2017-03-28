@@ -124,6 +124,7 @@
     <Content Include="Image\Länkar till bilder .txt" />
     <Content Include="Login.aspx" />
     <Content Include="CreateOrder.aspx" />
+    <Content Include="MyPages.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="CreateOrder.aspx.designer.cs">
       <DependentUpon>CreateOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyPages.aspx.cs">
+      <DependentUpon>MyPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyPages.aspx.designer.cs">
+      <DependentUpon>MyPages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Customerpage.aspx.cs">
