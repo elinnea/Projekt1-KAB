@@ -30,3 +30,11 @@
     padding: 3px 3px 3px 3px;
     padding-top: 2px;
 }
+.panel-body{
+    text-align: left;
+    display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+/*.panel-body är tillagd och ändrad*/
