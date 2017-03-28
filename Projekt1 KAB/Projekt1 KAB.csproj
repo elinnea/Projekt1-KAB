@@ -154,6 +154,7 @@
   <ItemGroup>
     <Content Include="index.aspx" />
     <Content Include="Customerpage.aspx" />
+    <Content Include="svc\svc_cart.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -208,6 +209,13 @@
     </Compile>
     <Compile Include="Customerpage.aspx.designer.cs">
       <DependentUpon>Customerpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="svc\svc_cart.aspx.cs">
+      <DependentUpon>svc_cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="svc\svc_cart.aspx.designer.cs">
+      <DependentUpon>svc_cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="TestController.cs" />
   </ItemGroup>

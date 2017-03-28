@@ -12,12 +12,12 @@ namespace Projekt1_KAB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Article article = SQL.GetArticleByID(2001);
-            articleContent.Text = $"{article.ArticleName} {article.ArticlePrice}kr <br> {article.ArticleDescription}";
-            if (article.IsInStock)
-            {
-                CheckBoxInStock.Checked = true;                
-            }
+            //Article article = SQL.GetArticleByID(2001);
+            //articleContent.Text = $"{article.ArticleName} {article.ArticlePrice}kr <br> {article.ArticleDescription}";
+            //if (article.IsInStock)
+            //{
+            //    CheckBoxInStock.Checked = true;                
+            //}
 
 //            string html ="< div class="container">    
 //	<div class="panel panel-primary">
