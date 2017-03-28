@@ -14,7 +14,6 @@
 
     <div class="container">
         <div class="row">
-            <form id="articlesForm" runat="server"></form>
             <asp:literal id="dynamicArticles" runat="server"></asp:literal>
         </div>
     </div>

@@ -31,7 +31,7 @@ namespace Projekt1_KAB.svc
                 }
                 cart.Add(article);
                 Session["Cart"] = cart;
-                info.Text = JsonConvert.SerializeObject("OK");
+                info.Text = JsonConvert.SerializeObject("Produkten är lagd i varukorgen");
 
             }
         }
