@@ -29,8 +29,7 @@ namespace Projekt1_KAB
                 html += $"<asp:Button ID=\"ButtonAddToCart\" runat=\"server\" Text=\"KÖP\" Onclick=\"ButtonAddToCart_Click\"/>";
                 html += $"</div></div></div>";
             }
-            dynamicArticles.Text = html;
-            
+            dynamicArticles.Text = html;            
         }
 
         protected void ButtonAddToCart_Click(object sender, EventArgs e)

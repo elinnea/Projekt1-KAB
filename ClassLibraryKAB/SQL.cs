@@ -220,7 +220,7 @@ namespace ClassLibraryKAB
             return articles;
         }
 
-        public Article GetArticleByID(int inputID)
+        public static Article GetArticleByID(int inputID)
         {
             SqlConnection myConnection = new SqlConnection(source);
             Article myArticle = new Article();
