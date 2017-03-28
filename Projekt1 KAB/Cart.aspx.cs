@@ -18,13 +18,28 @@ namespace Projekt1_KAB
 
                 List<Article> cart = (List<Article>)Session["Cart"];
 
+                string html = "";
+                decimal totalPrice = 0;
+
+                html += "<table class=\"table table-hover\"><thead><tr><th>Produkt</th><th>Pris</th></tr></thead><tbody>";
+
                 foreach (var item in cart)
                 {
-                    Literal1.Text += $"{item.ArticleName} <br>";
+                    html += $"<tr><td>{item.ArticleName}</td><td>{item.ArticlePrice}</td></tr>";
+                    totalPrice += item.ArticlePrice;
                 }
+                html += $"</tbody><thead><tr><th>Total summa</th><th>{totalPrice}</th></tr></thead></table>";
+
+                dynamicCart.Text = html;
+
+
             }
 
-            
+        }
+
+        protected void goToCreateOrder_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("CreateOrder.aspx");
         }
     }
 }
