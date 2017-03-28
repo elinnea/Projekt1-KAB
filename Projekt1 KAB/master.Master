@@ -19,6 +19,7 @@
         <ul class="nav navbar-nav navbar-right" style="padding-right:35px;">
             <li><a href="Register.aspx"><span class="glyphicon glyphicon-user" style="font-size:15px;"></span> Registera dig</a></li>
             <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in" style="font-size:15px;"></span> Logga in</a></li>
+            <li><a href="MyPages.aspx"><span class="glyphicon glyphicon-cog" style="font-size:15px;"></span> Mina sidor</a></li>
         </ul>
         <div class="container">
             <form class="form-inline">

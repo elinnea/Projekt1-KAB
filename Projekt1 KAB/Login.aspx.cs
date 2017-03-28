@@ -21,7 +21,9 @@ namespace Projekt1_KAB
         protected void Button1_Click(object sender, EventArgs e)
         {
             string username = TextBox1.Text;
+            //TODO maskera lösenordet
             string password = TextBox2.Text;
+           
 
             int correct = ClassLibraryKAB.SQL.VerifyUsernamePasswordCombination(username, password);
 

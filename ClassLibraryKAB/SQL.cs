@@ -12,6 +12,7 @@ namespace ClassLibraryKAB
     {
         static string source = "Data Source=.;Initial Catalog=KontorsprylarAB;Integrated Security=True";
 
+        #region Customer
         // CRUD for the Customer Table
 
         public static int AddCustomer(string userName, string userPassword, string firstName, string lastName, string street, string zip, string city, string countryCode, string email, string phoneNumber, bool isAdmin, bool isActive)
@@ -168,10 +169,41 @@ namespace ClassLibraryKAB
 
         // DeleateCustomer()
 
+        public static int VerifyUsernamePasswordCombination(string username, string password)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+            try
+
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand("SELECT CustomerID FROM Customer WHERE UserName = @name AND UserPassword = @password", myConnection);
+                myCommand.Parameters.Add("@name", SqlDbType.VarChar);
+                myCommand.Parameters["@name"].Value = username;
+                myCommand.Parameters.Add("@password", SqlDbType.VarChar);
+                myCommand.Parameters["@password"].Value = password;
+
+                var x = myCommand.ExecuteReader();
+                if (x.Read())
+                {
+                    return Convert.ToInt32(x[0]);
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+        }
+        
+        #endregion Customer
+
+        #region Article
 
         // CRUD for the Article Table
-
-
         List<Article> articles = new List<Article>();
 
         public static int CreateArticle(string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool IsInStock, string articleImage)
@@ -429,6 +461,9 @@ namespace ClassLibraryKAB
             finally { myConnection.Close(); }
         }
 
+        #endregion Customer
+
+        #region OrderHead
 
         // CRUD for the OrderHead Table
 
@@ -628,6 +663,10 @@ namespace ClassLibraryKAB
 
         // CRUD for the OrderDetail Table
 
+        #endregion OrderHead
+
+        #region OrderDetail
+
 
         public static void CreateOrderDetail(int orderHeadID)
         {
@@ -715,35 +754,9 @@ namespace ClassLibraryKAB
 
         //LOGIN. Function that returns a CustomerID if the username/password combination exist and -1 if not
 
-        public static int VerifyUsernamePasswordCombination(string username, string password)
-        {
-            SqlConnection myConnection = new SqlConnection(source);
-            try
+        #endregion OrderDetail
 
-            {
-                myConnection.Open();
-
-                SqlCommand myCommand = new SqlCommand("SELECT CustomerID FROM Customer WHERE UserName = @name AND UserPassword = @password", myConnection);
-                myCommand.Parameters.Add("@name", SqlDbType.VarChar);
-                myCommand.Parameters["@name"].Value = username;
-                myCommand.Parameters.Add("@password", SqlDbType.VarChar);
-                myCommand.Parameters["@password"].Value = password;
-
-                var x = myCommand.ExecuteReader();
-                if (x.Read())
-                {
-                    return Convert.ToInt32(x[0]);
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            finally
-            {
-                myConnection.Close();
-            }
-        }
+        
 
         
     }
