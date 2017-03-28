@@ -53,9 +53,10 @@ namespace Projekt1_KAB
                 {
                     Response.Redirect("Customerpage.aspx");
                 }
-                
-                Session.RemoveAll();
+                              
             }
         }
+
+       
     }
 }
