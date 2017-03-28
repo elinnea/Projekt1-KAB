@@ -14,17 +14,26 @@ namespace Projekt1_KAB
         {
             if (Session["Cart"] != null)
             {
-                string numberOfArticles = ((List<Article>)Session["Cart"]).Count.ToString();
+                Literal1.Text = ((List<Article>)Session["Cart"]).Count.ToString();
 
                 List<Article> cart = (List<Article>)Session["Cart"];
 
+                string html = "";
+                decimal totalPrice = 0;
+
+                html += "<table class=\"table table-hover\"><thead><tr><th>Produkt</th><th>Pris</th></tr></thead><tbody>";
+
                 foreach (var item in cart)
                 {
-                    Literal1.Text += $"{item.ArticleName} {item.ArticlePrice}<br>";
+                    html += $"<tr><td>{item.ArticleName}</td><td>{item.ArticlePrice}</td></tr>";
+                    totalPrice += item.ArticlePrice;
                 }
+                html += $"</tbody><thead><tr><th>Total summa</th><th>{totalPrice}</th></tr></thead></table>";
+
+                dynamicCart.Text = html;
             }
 
-            
+
         }
     }
 }
