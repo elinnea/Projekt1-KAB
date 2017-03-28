@@ -47,11 +47,11 @@ namespace Projekt1_KAB
 
         public void ClearTextBoxesAndUncheckCheckBoxes()
         {
-            TextBoxArticleName.Text = "Ange artikelnamn";
-            TextBoxArticlePrice.Text = "Ange artikelpris";
-            TextBoxArticleCategory.Text = "Ange artikelkategori";
-            TextBoxArticleDescription.Text = "Ange beskrivning";
-            TextBoxURL.Text = "Ange URL";
+            TextBoxArticleName.Text = "";
+            TextBoxArticlePrice.Text = "";
+            TextBoxArticleCategory.Text = "";
+            TextBoxArticleDescription.Text = "";
+            TextBoxURL.Text = "";
             CheckBoxIsActive.Checked = false;
             CheckBoxIsInStock.Checked = false;
             isActive = true;
@@ -110,7 +110,7 @@ namespace Projekt1_KAB
         protected void ButtonUpdateArticle_Click(object sender, EventArgs e)
         {
 
-            int articleID = Convert.ToInt32(TextBoxArticleName.Text);
+            int articleID = Convert.ToInt32(LabelArticleID.Text);
             string articleName = TextBoxArticleName.Text;
             double articlePrice = Convert.ToDouble(TextBoxArticlePrice.Text);
             string articleCategory = TextBoxArticleCategory.Text;
