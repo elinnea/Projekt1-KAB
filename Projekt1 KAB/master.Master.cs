@@ -20,15 +20,9 @@ namespace Projekt1_KAB
                 HyperLinkMyPages.Visible = true;
                 HyperLinkLogout.Visible = true;
             }
-            else
-            {
-                HyperLinkLogin.Visible = true;
-                HyperLinkReg.Visible = true;
-                HyperLinkMyPages.Visible = false;
-                HyperLinkLogout.Visible = false;
-            }
-
+            
         }
+
     }
 
 }

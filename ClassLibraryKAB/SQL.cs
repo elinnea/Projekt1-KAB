@@ -386,7 +386,7 @@ namespace ClassLibraryKAB
             return articles;
         }
 
-        public static void UpdateArticle(int ArticleID, string articleName, double articlePrice, string articleCategory, string articleDescription, bool isActive, bool IsInStock, string articleImage)
+        public static void UpdateArticle(int ArticleID, string articleName, decimal articlePrice, string articleCategory, string articleDescription, bool isActive, bool IsInStock, string articleImage)
         {
 
             SqlConnection myConnection = new SqlConnection(source);

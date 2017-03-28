@@ -127,6 +127,7 @@
     <Content Include="Image\Rum.png" />
     <Content Include="Login.aspx" />
     <Content Include="CreateOrder.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="MyPages.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="master.Master.cs">
       <DependentUpon>master.Master</DependentUpon>

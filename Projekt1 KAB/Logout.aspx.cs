@@ -1,18 +1,19 @@
-﻿using System;
+﻿using ClassLibraryKAB;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ClassLibraryKAB;
-using System.Globalization;
 
 namespace Projekt1_KAB
 {
-    public partial class index : System.Web.UI.Page
-    {
+    public partial class Logout : System.Web.UI.Page
+    {       
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session.Clear();
 
             List<Article> articles = SQL.ReadArticles();
 
@@ -29,10 +30,6 @@ namespace Projekt1_KAB
                 html += $"</div></div>";
             }
             dynamicArticles.Text = html;
-
         }
-
-
     }
-
 }

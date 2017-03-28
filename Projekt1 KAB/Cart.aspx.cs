@@ -1,6 +1,7 @@
 ﻿using ClassLibraryKAB;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -25,10 +26,10 @@ namespace Projekt1_KAB
 
                 foreach (var item in cart)
                 {
-                    html += $"<tr><td>{item.ArticleName}</td><td>{item.ArticlePrice}</td></tr>";
+                    html += $"<tr><td>{item.ArticleName}</td><td>{item.ArticlePrice.ToString("C2", CultureInfo.CurrentCulture)}</td></tr>";
                     totalPrice += item.ArticlePrice;
                 }
-                html += $"</tbody><thead><tr><th>Total summa</th><th>{totalPrice}</th></tr></thead></table>";
+                html += $"</tbody><thead><tr><th>Total summa</th><th>{totalPrice.ToString("C2", CultureInfo.CurrentCulture)}</th></tr></thead></table>";
 
                 dynamicCart.Text = html;
                 Session["totalPrice"] = totalPrice;
@@ -42,5 +43,6 @@ namespace Projekt1_KAB
         {
             Server.Transfer("CreateOrder.aspx");
         }
+
     }
 }
