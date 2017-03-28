@@ -33,7 +33,7 @@ namespace Projekt1_KAB
 
         protected void HyperLinkLogout_Load(object sender, EventArgs e)
         {
-            Session.Clear();
+            //Session.Clear();
         }
     }
 
