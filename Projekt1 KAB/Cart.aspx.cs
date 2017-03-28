@@ -31,6 +31,7 @@ namespace Projekt1_KAB
                 html += $"</tbody><thead><tr><th>Total summa</th><th>{totalPrice}</th></tr></thead></table>";
 
                 dynamicCart.Text = html;
+                Session["totalPrice"] = totalPrice;
 
 
             }
