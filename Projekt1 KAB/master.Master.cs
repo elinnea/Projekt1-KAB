@@ -28,6 +28,12 @@ namespace Projekt1_KAB
                 HyperLinkLogout.Visible = false;
             }
 
+
+        }
+
+        protected void HyperLinkLogout_Load(object sender, EventArgs e)
+        {
+            Session.Clear();
         }
     }
 

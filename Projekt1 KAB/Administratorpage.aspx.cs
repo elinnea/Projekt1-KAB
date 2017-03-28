@@ -112,7 +112,7 @@ namespace Projekt1_KAB
 
             int articleID = Convert.ToInt32(LabelArticleID.Text);
             string articleName = TextBoxArticleName.Text;
-            double articlePrice = Convert.ToDouble(TextBoxArticlePrice.Text);
+            decimal articlePrice = Convert.ToDecimal(TextBoxArticlePrice.Text);
             string articleCategory = TextBoxArticleCategory.Text;
             string articleDescription = TextBoxArticleDescription.Text;
             string articleURL = TextBoxURL.Text;

@@ -20,7 +20,7 @@
             <li><asp:HyperLink ID="HyperLinkLogin" runat="server" href="Login.aspx" Visible="true"><span class="glyphicon glyphicon-log-in" style="font-size:15px;" ></span> Logga in</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLinkReg" runat="server" href="Register.aspx" Visible="true"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Registera dig</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLinkMyPages" runat="server" href="MyPages.aspx" Visible="false"><span class="glyphicon glyphicon-cog" style="font-size:15px;" ></span> Mina sidor</asp:HyperLink></li>
-            <li><asp:HyperLink ID="HyperLinkLogout" runat="server" href="index.aspx" Visible="false"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Logga ut</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLinkLogout" runat="server" href="index.aspx" Visible="false" OnLoad="HyperLinkLogout_Load"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Logga ut</asp:HyperLink></li>
         </ul>
         <div class="container">
             <form class="form-inline">

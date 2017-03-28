@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 using ClassLibraryKAB;
+using System.Globalization;
 
 namespace Projekt1_KAB
 {
@@ -52,7 +53,7 @@ namespace Projekt1_KAB
 
                 htmlOH += $"<tr><td>{orderHeadID}</td><td>{discount}</td><td>{orderDate}</td><td>{orderStatus}</td></tr>";
 
-                htmlOH += $"</tbody><thead><tr><th>Total summa</th><th></th><th></th><th>{totalPrice}</th></tr></thead></table>";
+                htmlOH += $"</tbody><thead><tr><th>Total summa</th><th></th><th></th><th>{totalPrice.ToString("C2", CultureInfo.CurrentCulture)}</th></tr></thead></table>";
 
                 dynamicOrder.Text = htmlOH;
 
@@ -65,7 +66,7 @@ namespace Projekt1_KAB
 
                 foreach (var item in cart)
                 {
-                    htmlOD += $"<tr><td>{item.ArticleName}</td><td>{item.ArticlePrice}</td><td>{numberOfArticles}</td></tr>";
+                    htmlOD += $"<tr><td>{item.ArticleName}</td><td>{item.ArticlePrice.ToString("C2", CultureInfo.CurrentCulture)}</td><td>{numberOfArticles}</td></tr>";
                 }
 
 
