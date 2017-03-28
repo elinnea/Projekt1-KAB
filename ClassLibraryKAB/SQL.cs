@@ -668,42 +668,6 @@ namespace ClassLibraryKAB
         #region OrderDetail
 
 
-        public static void CreateOrderDetail(int orderHeadID)
-        {
-            List<OrderDetail> orderDetails = new List<OrderDetail>();
-
-            SqlConnection myConnection = new SqlConnection();
-            myConnection.ConnectionString = source;
-
-            try
-            {
-                myConnection.Open();
-
-                SqlCommand myCommand = new SqlCommand($"select * from OrderDetails where OrderHeadID = {orderHeadID} order by OrderDetailsID asc", myConnection);
-                SqlDataReader myReader = myCommand.ExecuteReader();
-
-                while (myReader.Read())
-                {
-                    int OrderHeadID = Convert.ToInt32(myReader["OrderHeadID"].ToString());
-                    int ArticleID = Convert.ToInt32(myReader["ArticleID"].ToString());
-                    decimal Price = Convert.ToDecimal(myReader["Price"].ToString());
-                    int NumberOfArticles = Convert.ToInt32(myReader["NumberOfArticles"].ToString());
-
-                    orderDetails.Add(new OrderDetail(OrderHeadID, ArticleID, Price, NumberOfArticles));
-
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                myConnection.Close();
-            }
-        }
-
         public static void CreateOrderDetail(int orderHeadID, int articleID, decimal price, int numberOfArticles)
         {
             SqlConnection myConnection = new SqlConnection(source);
