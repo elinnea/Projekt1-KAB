@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <div class="input-group">
-                        <a href="#" class="btn btn-info btn-lg">
+                        <a href="Cart.aspx" class="btn btn-info btn-lg">
                             <span class="glyphicon glyphicon-shopping-cart"></span>Kundvagn
                         </a>
                     </div>
