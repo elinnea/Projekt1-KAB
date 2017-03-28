@@ -16,7 +16,9 @@ namespace Projekt1_KAB
             if (Session["Cart"] != null)
             {
                 Literal1.Text = ((List<Article>)Session["Cart"]).Count.ToString();
-                LiteralCustomerID.Text = ((Customer)Session["user"]).UserName.ToString();
+
+                Customer user = ((Customer)Session["user"]);
+                LiteralCustomerID.Text = user.FirstName.ToString();
             }
         }
     }

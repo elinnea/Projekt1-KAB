@@ -149,8 +149,8 @@ namespace ClassLibraryKAB
                     myReader["CountryCode"].ToString(),
                     myReader["Email"].ToString(),
                     myReader["PhoneNumber"].ToString(),
-                    Convert.ToBoolean(myReader["IsAdmin"].ToString()),
-                    Convert.ToBoolean(myReader["IsActive"].ToString())
+                    Convert.ToBoolean(myReader["IsAdmin"]),
+                    Convert.ToBoolean(myReader["IsActive"])
                     );
                 }
 
