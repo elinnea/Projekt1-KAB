@@ -31,15 +31,6 @@ namespace Projekt1_KAB {
         protected global::System.Web.UI.WebControls.Label LabelArticleID;
         
         /// <summary>
-        /// ButtonReadArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonReadArticles;
-        
-        /// <summary>
         /// TextBoxArticleName control.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace Projekt1_KAB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxArticleName;
-        
-        /// <summary>
-        /// ListBoxArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxArticles;
         
         /// <summary>
         /// TextBoxArticlePrice control.
@@ -137,5 +119,23 @@ namespace Projekt1_KAB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonUpdateArticle;
+        
+        /// <summary>
+        /// ButtonReadArticles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonReadArticles;
+        
+        /// <summary>
+        /// ListBoxArticles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBoxArticles;
     }
 }
