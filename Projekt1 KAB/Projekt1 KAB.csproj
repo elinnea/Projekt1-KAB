@@ -120,8 +120,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CSS\MyStyleSheet.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Image\20173_cooh01a_01_PH141029.jpg" />
+    <Content Include="Image\gard3-1024x600.jpg" />
     <Content Include="Image\Logga.png" />
     <Content Include="Image\Länkar till bilder .txt" />
+    <Content Include="Image\Rum.png" />
     <Content Include="Login.aspx" />
     <Content Include="CreateOrder.aspx" />
     <Content Include="MyPages.aspx" />
