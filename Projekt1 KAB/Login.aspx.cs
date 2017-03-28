@@ -24,7 +24,8 @@ namespace Projekt1_KAB
             string password = TextBox2.Text;
 
             int correct = ClassLibraryKAB.SQL.VerifyUsernamePasswordCombination(username, password);
-            
+
+
             if (correct == -1)
             {
                 Label1.Text = "Your username or password is incorrect";
@@ -41,6 +42,7 @@ namespace Projekt1_KAB
                             
                 Session["id"] = correct.ToString();
                 Customer user = SQL.GetCustomer(correct);
+                Session["user"] = user;
                 bool admin = user.IsAdmin;
 
                 if (admin)
