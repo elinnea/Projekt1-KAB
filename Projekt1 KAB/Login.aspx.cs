@@ -24,8 +24,7 @@ namespace Projekt1_KAB
             string password = TextBox2.Text;
 
             int correct = ClassLibraryKAB.SQL.VerifyUsernamePasswordCombination(username, password);
-            Customer user = new Customer();
-
+            
             if (correct == -1)
             {
                 Label1.Text = "Your username or password is incorrect";
@@ -41,9 +40,18 @@ namespace Projekt1_KAB
                 // We should ask IsAdmin here and redirect to admin site!!
                             
                 Session["id"] = correct.ToString();
-                               
+                Customer user = SQL.GetCustomer(correct);
+                bool admin = user.IsAdmin;
 
-                Response.Redirect("Customerpage.aspx");
+                if (admin)
+                {
+                    Response.Redirect("Administratorpage.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Customerpage.aspx");
+                }
+                
                 Session.RemoveAll();
             }
         }
