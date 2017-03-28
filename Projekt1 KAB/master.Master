@@ -22,11 +22,11 @@
             <li><asp:HyperLink ID="HyperLinkMyPages" runat="server" href="MyPages.aspx" Visible="false"><span class="glyphicon glyphicon-cog" style="font-size:15px;" ></span> Mina sidor</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLinkLogout" runat="server" href="Logout.aspx" Visible="false"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Logga ut</asp:HyperLink></li>
         </ul>
-        <div class="container">
+<%--        <div class="container">--%>
             <form class="form-inline">
                 <div class="form-group">
                     <div id="rubrikDiv">
-                        <img src="Image/Logga.png" class="img-rounded" alt="KABpenna" width="304" height="236"/>
+                        <img src="Image/Logga.png" class="img-rounded" alt="KABpenna" width="450" height="236"/>
                         
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </form>
-        </div>
+<%--        </div>--%>
 
 <%--        </div>--%>
 
@@ -92,6 +92,8 @@
                             </ul>
                         </li>
                     </ul>
+
+               
 <%--                    <ul class="navbar-form navbar-left">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search">
