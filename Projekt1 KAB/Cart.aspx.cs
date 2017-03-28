@@ -14,13 +14,13 @@ namespace Projekt1_KAB
         {
             if (Session["Cart"] != null)
             {
-                Literal1.Text = ((List<Article>)Session["Cart"]).Count.ToString();
+                string numberOfArticles = ((List<Article>)Session["Cart"]).Count.ToString();
 
                 List<Article> cart = (List<Article>)Session["Cart"];
 
                 foreach (var item in cart)
                 {
-                    Literal1.Text += $"{item.ArticleName} <br>";
+                    Literal1.Text += $"{item.ArticleName} {item.ArticlePrice}<br>";
                 }
             }
 
