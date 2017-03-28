@@ -755,9 +755,6 @@ namespace ClassLibraryKAB
         //LOGIN. Function that returns a CustomerID if the username/password combination exist and -1 if not
 
         #endregion OrderDetail
-
-        
-
         
     }
 }

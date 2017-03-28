@@ -18,36 +18,34 @@ namespace Projekt1_KAB
         }
 
         // When you login and click on this button your username/password combination will be evaluated
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void ButtonLogIN_Click(object sender, EventArgs e)
         {
-            string username = TextBox1.Text;
-            //TODO maskera lösenordet
-            string password = TextBox2.Text;
-           
+            string username = TextBoxUsername.Text;
+            string password = TextBoxPassword.Text;
 
+            //Kollar att användaren finns och att användarnamn och lösenord matchar
+            //Returnerar CustomerID
             int correct = ClassLibraryKAB.SQL.VerifyUsernamePasswordCombination(username, password);
 
 
             if (correct == -1)
             {
-                Label1.Text = "Your username or password is incorrect";
-                Label1.ForeColor = System.Drawing.Color.Red;
+                LabelLoginMsg.Text = "Your username or password is incorrect";
+                LabelLoginMsg.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
-                Label1.Text = $"Your username and password is correct: {correct}";
-                Label1.ForeColor = System.Drawing.Color.Green;
+                LabelLoginMsg.Text = $"Your username and password is correct: {correct}";
+                LabelLoginMsg.ForeColor = System.Drawing.Color.Green;
 
-                // The customerID is saved for the Customer that logs in succesfully
-                // You are transfered to the user site
-                // We should ask IsAdmin here and redirect to admin site!!
-                            
+                                            
                 Session["id"] = correct.ToString();
                 Customer user = SQL.GetCustomer(correct);
-                //Session["user"] = user;
+                Session["user"] = user;
                 bool admin = user.IsAdmin;
 
-                if (admin)
+                //Dirigerar den som loggar in om den är admin eller kund
+                if (admin) 
                 {
                     Response.Redirect("Administratorpage.aspx");
                 }
@@ -55,8 +53,7 @@ namespace Projekt1_KAB
                 {
                     Response.Redirect("Customerpage.aspx");
                 }
-                
-                //Session.RemoveAll();
+
             }
         }
     }

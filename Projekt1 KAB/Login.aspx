@@ -17,18 +17,18 @@
                 <tr>
                     <td class="style2">Username:</td>
                     <td>
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox>
                     </td>
                     <td>
-                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                                ControlToValidate="TextBox1" ErrorMessage="Please Enter Your Username"
+                       <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                ControlToValidate="TextBoxUsername" ErrorMessage="Please Enter Your Username"
                                 ForeColor="Red"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
                     <td class="style2">Password:</td>
                     <td>
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxPassword" TextMode="Password" runat="server"></asp:TextBox>
                     </td>
                     <td>
                         <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
@@ -44,13 +44,17 @@
                 <tr>
                     <td class="style2"></td>
                     <td>
-                        <asp:Button ID="Button1" runat="server" Text="Log In" OnClick="Button1_Click" />
+                        <asp:Button ID="ButtonLogIN" runat="server" Text="Log In" OnClick="ButtonLogIN_Click" />
                     </td>
                     <td>
-                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                        <asp:Label ID="LabelLoginMsg" runat="server"></asp:Label>
                     </td>
                 </tr>
             </table>
+            <div style="float:none">
+            Är du inte kund hos oss ännu? <br />
+             <a href="Register.aspx">Registera dig</a>
+            </div>
         </div>
     </form>
 </asp:Content>
