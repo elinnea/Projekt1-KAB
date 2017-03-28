@@ -24,6 +24,7 @@ namespace Projekt1_KAB
             string password = TextBox2.Text;
 
             int correct = ClassLibraryKAB.SQL.VerifyUsernamePasswordCombination(username, password);
+            Customer user = new Customer();
 
             if (correct == -1)
             {
@@ -38,8 +39,10 @@ namespace Projekt1_KAB
                 // The customerID is saved for the Customer that logs in succesfully
                 // You are transfered to the user site
                 // We should ask IsAdmin here and redirect to admin site!!
-
+                            
                 Session["id"] = correct.ToString();
+                               
+
                 Response.Redirect("Customerpage.aspx");
                 Session.RemoveAll();
             }
