@@ -15,7 +15,7 @@ namespace Projekt1_KAB
         {
             if (Session["Cart"] != null)
             {
-                Literal1.Text = ((List<Article>)Session["Cart"]).Count.ToString();
+                List<Article> cart = ((List<Article>)Session["Cart"]);
 
                 Customer user = ((Customer)Session["user"]);
 
@@ -24,11 +24,18 @@ namespace Projekt1_KAB
                 string orderDate = DateTime.Today.ToString();
                 string orderStatus = "Pågående";
 
+                int orderHeadID = ClassLibraryKAB.SQL.CreateOrderHead(customerID, discount, orderDate, orderStatus);
 
+                foreach (var item in cart)
+                {
+                    int articleID = item.ArticleID;
+                    decimal price = item.ArticlePrice;
+                    int numberOfArticles = 1;
+                   
+                    ClassLibraryKAB.SQL.CreateOrderDetail(orderHeadID, articleID, price, numberOfArticles);
+                }
 
-                /*LiteralCustomerID.Text =*/ 
-
-                int OrderHeadID = ClassLibraryKAB.SQL.CreateOrderHead(customerID, discount, orderDate, orderStatus);
+                
             }
         }
     }
