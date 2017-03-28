@@ -31,9 +31,15 @@ namespace Projekt1_KAB
                 html += $"</tbody><thead><tr><th>Total summa</th><th>{totalPrice}</th></tr></thead></table>";
 
                 dynamicCart.Text = html;
+
+
             }
 
+        }
 
+        protected void goToCreateOrder_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("CreateOrder.aspx");
         }
     }
 }

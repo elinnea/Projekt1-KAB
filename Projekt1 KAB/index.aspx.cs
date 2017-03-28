@@ -25,7 +25,7 @@ namespace Projekt1_KAB
                 html += $"<div class=\"panel-body\">";
                 html += $"<img style='height:150px;' src=\"{item.ArticleImage}\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\"></div>";
                 html += $"<div class=\"panel - footer\">{item.ArticlePrice}</div>";
-                html += $"<button onclick=\"BuyItem({item.ArticleID})\" type=\"button\">KÖP</button>";
+                //html += $"<button onclick=\"BuyItem({item.ArticleID})\" type=\"button\">KÖP</button>";
                 html += $"</div></div>";
             }
             dynamicArticles.Text = html;
