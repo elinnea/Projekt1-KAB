@@ -17,14 +17,14 @@
 <%--    <form id="form1" runat="server">--%>
 <%--        <div class="section glyphicon-fullscreen bridge-section">--%>
         <ul class="nav navbar-nav navbar-right" style="padding-right:35px;">
-            <li><a href="#"><span class="glyphicon glyphicon-user" style="font-size:15px;"></span> Registera dig</a></li>
+            <li><a href="Register.aspx"><span class="glyphicon glyphicon-user" style="font-size:15px;"></span> Registera dig</a></li>
             <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in" style="font-size:15px;"></span> Logga in</a></li>
         </ul>
         <div class="container">
             <form class="form-inline">
                 <div class="form-group">
                     <div id="rubrikDiv">
-                        <img src="Image/Logga.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+                        <img src="Image/Logga.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236"/>
                         
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <div class="input-group">
-                        <a href="Cart.aspx" class="btn btn-info btn-lg">
+                        <a href="Cart.aspx" class="btn btn-primary btn-lg">
                             <span class="glyphicon glyphicon-shopping-cart"></span>Kundvagn
                         </a>
                     </div>
