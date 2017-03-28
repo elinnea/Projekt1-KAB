@@ -14,8 +14,8 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <%--<form id="form1" runat="server">--%>
-        <%--<div class="section glyphicon-fullscreen bridge-section">--%>
+<%--    <form id="form1" runat="server">--%>
+<%--        <div class="section glyphicon-fullscreen bridge-section">--%>
         <ul class="nav navbar-nav navbar-right" style="padding-right:35px;">
             <li><a href="#"><span class="glyphicon glyphicon-user" style="font-size:15px;"></span> Registera dig</a></li>
             <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in" style="font-size:15px;"></span> Logga in</a></li>
@@ -24,11 +24,12 @@
             <form class="form-inline">
                 <div class="form-group">
                     <div id="rubrikDiv">
-                        Kontorsprylar AB
+                        <img src="Image/Logga.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+                        
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="input-group">
+                    <div class="input-group" >
                         <input type="text" class="form-control" placeholder="Search" />
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit">
@@ -39,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <div class="input-group">
-                        <a href="#" class="btn btn-info btn-lg">
+                        <a href="Cart.aspx" class="btn btn-info btn-lg">
                             <span class="glyphicon glyphicon-shopping-cart"></span>Kundvagn
                         </a>
                     </div>
@@ -47,7 +48,7 @@
             </form>
         </div>
 
-        <%--            </div>--%>
+<%--        </div>--%>
 
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -57,7 +58,15 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.aspx">Hem</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Produkter
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Erbjudande
+        <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Veckans deal</a></li>
+                                <li><a href="#">3 för 2</a></li>
+                            </ul>
+                        </li>
+                                           <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pärmar & register
         <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Pärmar & register</a></li>
@@ -65,7 +74,24 @@
                                 <li><a href="#">Häftapparater</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Page 2</a></li>
+                                        <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pennor
+        <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Bläckpennor</a></li>
+                                <li><a href="#">Blyertspennor</a></li>
+                                <li><a href="#">Färgpennor</a></li>
+                            </ul>
+                        </li>
+                                        <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Häftapparater
+        <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Häftaparater</a></li>
+                                <li><a href="#">Häftklammar</a></li>
+                                <li><a href="#">produkt 3</a></li>
+                            </ul>
+                        </li>
                     </ul>
 <%--                    <ul class="navbar-form navbar-left">
                         <div class="input-group">
@@ -101,30 +127,30 @@
 <%--            <div class="modal-content">
                 <div class="modal-header"style="background-color:cornflowerblue">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" style="background-color:cornflowerblue">Logga in</h4>
+                    <h4 class="modal-title" style="background-color:cornflowerblue">logga in</h4>
                 </div>
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label><b>Användarnamn</b></label>
-                        <input type="text" placeholder="Ange användarnamn" name="uname" required="required" />
+                        <label><b>användarnamn</b></label>
+                        <input type="text" placeholder="ange användarnamn" name="uname" required="required" />
                     </div>
 
                     <div class="form-group">
-                        <label><b>Lösenord</b></label>
-                        <input type="password" placeholder="Ange lösenord" name="psw" required="required"/>
+                        <label><b>lösenord</b></label>
+                        <input type="password" placeholder="ange lösenord" name="psw" required="required"/>
                     </div>
 
                     <div class="form-group">
-                    <button type="submit">Logga in</button>
-                    <input type="checkbox" checked="checked">Kom ihåg mig 
+                    <button type="submit">logga in</button>
+                    <input type="checkbox" checked="checked">kom ihåg mig 
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>--%>
-
+                    <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                </div>--%>
+          <%--  </div>--%>
+<%--        </form>--%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 <a href="index.aspx">index.aspx</a>
             </asp:ContentPlaceHolder>

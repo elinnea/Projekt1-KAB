@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Projekt1_KAB {
+namespace Projekt1_KAB.svc {
     
     
-    public partial class index {
+    public partial class svc_cart {
         
         /// <summary>
-        /// articlesForm control.
+        /// info control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm articlesForm;
-        
-        /// <summary>
-        /// dynamicArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal dynamicArticles;
+        protected global::System.Web.UI.WebControls.Literal info;
     }
 }
