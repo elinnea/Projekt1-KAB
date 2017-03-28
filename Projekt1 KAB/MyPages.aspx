@@ -21,5 +21,9 @@
        <tr><td>Telefonnummer: </td><td><asp:TextBox ID="TextBoxPhoneNumber" runat="server"></asp:TextBox></td></tr>
        <tr><td></td><td></td></tr>     
    </table>
+
+        <div class="rowOrder">
+                    <asp:Literal ID="dynamicOrderHead" runat="server"></asp:Literal>
+                </div>
 </form>
 </asp:Content>

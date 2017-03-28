@@ -13,10 +13,13 @@ namespace Projekt1_KAB
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            Customer user = SQL.GetCustomer(Convert.ToInt32(Session["id"]));
+            
 
             if (Session["id"] != null)
             {
+                Customer user = SQL.GetCustomer(Convert.ToInt32(Session["id"]));
+                int customerID = Convert.ToInt32(Session["id"].ToString());
+
                 LabelWelcome.Text = $"Välkommen {user.FirstName} {user.LastName}";
                 LabelCustomerID.Text = user.CustomerID.ToString();
                 LabelUserName.Text = user.UserName;
@@ -29,6 +32,20 @@ namespace Projekt1_KAB
                 TextBoxCountryCode.Text = user.CountryCode;
                 TextBoxEmail.Text = user.Email;
                 TextBoxPhoneNumber.Text = user.PhoneNumber;
+
+                // Visa data för kunden Orderhuvud
+                List<OrderHead> orderHead = SQL.ReadOrderHead(customerID);
+
+                string htmlOH = "";
+
+                htmlOH += "<table class=\"table table-hover\"><thead><tr><th>Din order</th><th>Rabatt</th><th>Datum</th><th>Orderstatus</th></tr></thead><tbody>";
+
+                foreach (var item in orderHead)
+                {
+                    htmlOH += $"<tr><td>{item.OrderHeadID}</td><td>{item.Discount}</td><td>{item.OrderDate}</td><td>{item.OrderStatus}</td></tr>";
+                }
+
+                dynamicOrderHead.Text = htmlOH;
             }
 
             else

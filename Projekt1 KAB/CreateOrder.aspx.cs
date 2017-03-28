@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace Projekt1_KAB
 {
-    public partial class OrderHead : System.Web.UI.Page
+    public partial class CreateOrder : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,7 @@ namespace Projekt1_KAB
                 // Detta skickas till databasen
                 int customerID = user.CustomerID;
                 decimal discount = 0;
-                string orderDate = DateTime.Today.ToString();
+                string orderDate = DateTime.Today.ToShortDateString();
                 string orderStatus = "Pågående";
 
 
