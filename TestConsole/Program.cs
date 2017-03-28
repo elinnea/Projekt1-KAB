@@ -54,13 +54,19 @@ namespace TestConsole // Used for testing the functionalities of the ClassLibrar
 
             //    Console.ReadKey();
 
-            List<Article> articles = ClassLibraryKAB.SQL.ReadArticles();
+            //List<Article> articles = ClassLibraryKAB.SQL.ReadArticles();
 
-            foreach (var item in articles)
-            {
-                Console.WriteLine(item.ArticleID);
-                Console.ReadLine();
-            }
+            //foreach (var item in articles)
+            //{
+            //    Console.WriteLine(item.ArticleID);
+            //    Console.ReadLine();
+            //}
+
+            //string orderDate = DateTime.Today.ToString();
+
+            //Console.WriteLine(orderDate);
+
+            //Console.ReadKey();
         }
     }
 }
