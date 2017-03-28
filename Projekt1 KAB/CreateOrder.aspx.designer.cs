@@ -13,6 +13,15 @@ namespace Projekt1_KAB {
     public partial class OrderHead {
         
         /// <summary>
+        /// createOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm createOrder;
+        
+        /// <summary>
         /// Literal1 control.
         /// </summary>
         /// <remarks>
@@ -22,12 +31,21 @@ namespace Projekt1_KAB {
         protected global::System.Web.UI.WebControls.Literal Literal1;
         
         /// <summary>
-        /// LiteralCustomerID control.
+        /// dynamicOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LiteralCustomerID;
+        protected global::System.Web.UI.WebControls.Literal dynamicOrder;
+        
+        /// <summary>
+        /// dynamicOrderDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal dynamicOrderDetails;
     }
 }

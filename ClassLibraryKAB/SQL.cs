@@ -667,41 +667,47 @@ namespace ClassLibraryKAB
 
         #region OrderDetail
 
-
-        public static void CreateOrderDetail(int orderHeadID)
+        public static void CreateOrderDetail(int orderHeadID, int articleID, decimal price, int numberOfArticles)
         {
-            List<OrderDetail> orderDetails = new List<OrderDetail>();
-
-            SqlConnection myConnection = new SqlConnection();
-            myConnection.ConnectionString = source;
+            SqlConnection myConnection = new SqlConnection(source);
 
             try
             {
                 myConnection.Open();
 
-                SqlCommand myCommand = new SqlCommand($"select * from OrderDetails where OrderHeadID = {orderHeadID} order by OrderDetailsID asc", myConnection);
-                SqlDataReader myReader = myCommand.ExecuteReader();
+                SqlCommand myCommand = new SqlCommand("CreateOrderDetails", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;                        // För att använda stored procedure
 
-                while (myReader.Read())
-                {
-                    int OrderHeadID = Convert.ToInt32(myReader["OrderHeadID"].ToString());
-                    int ArticleID = Convert.ToInt32(myReader["ArticleID"].ToString());
-                    decimal Price = Convert.ToDecimal(myReader["Price"].ToString());
-                    int NumberOfArticles = Convert.ToInt32(myReader["NumberOfArticles"].ToString());
+                // Skapa parametrar
 
-                    orderDetails.Add(new OrderDetail(OrderHeadID, ArticleID, Price, NumberOfArticles));
+                SqlParameter myOrderHeadID = new SqlParameter("@OrderHeadID", SqlDbType.Int);
+                myOrderHeadID.Value = orderHeadID;
 
-                }
+                SqlParameter myArticleID = new SqlParameter("@ArticleID", SqlDbType.Int);
+                myArticleID.Value = articleID;
+
+                SqlParameter myPrice = new SqlParameter("@Price", SqlDbType.Money);
+                myPrice.Value = price;
+
+                SqlParameter myNumberOfArticles = new SqlParameter("@NumberOfArticles", SqlDbType.Int);
+                myNumberOfArticles.Value = numberOfArticles;
+
+                myCommand.Parameters.Add(myOrderHeadID);
+                myCommand.Parameters.Add(myArticleID);
+                myCommand.Parameters.Add(myPrice);
+                myCommand.Parameters.Add(myNumberOfArticles);
+
+                myCommand.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                Console.WriteLine(ex.Message);
             }
             finally
             {
                 myConnection.Close();
             }
+
         }
 
         public static List<OrderDetail> ReadOrderDetail(int orderHeadID)
