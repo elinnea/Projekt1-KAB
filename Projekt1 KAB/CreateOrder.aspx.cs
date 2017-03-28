@@ -18,7 +18,17 @@ namespace Projekt1_KAB
                 Literal1.Text = ((List<Article>)Session["Cart"]).Count.ToString();
 
                 Customer user = ((Customer)Session["user"]);
-                LiteralCustomerID.Text = user.FirstName.ToString();
+
+                int customerID = user.CustomerID;
+                decimal discount = 0;
+                string orderDate = DateTime.Today.ToString();
+                string orderStatus = "Pågående";
+
+
+
+                /*LiteralCustomerID.Text =*/ 
+
+                int OrderHeadID = ClassLibraryKAB.SQL.CreateOrderHead(customerID, discount, orderDate, orderStatus);
             }
         }
     }
