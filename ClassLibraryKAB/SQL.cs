@@ -714,6 +714,49 @@ namespace ClassLibraryKAB
             }
         }
 
+        public static void CreateOrderDetail(int orderHeadID, int articleID, decimal price, int numberOfArticles)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand("CreateOrderDetails", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;                        // För att använda stored procedure
+
+                // Skapa parametrar
+
+                SqlParameter myOrderHeadID = new SqlParameter("@OrderHeadID", SqlDbType.Int);
+                myOrderHeadID.Value = orderHeadID;
+
+                SqlParameter myArticleID = new SqlParameter("@ArticleID", SqlDbType.Int);
+                myArticleID.Value = articleID;
+
+                SqlParameter myPrice = new SqlParameter("@Price", SqlDbType.Money);
+                myPrice.Value = price;
+
+                SqlParameter myNumberOfArticles = new SqlParameter("@NumberOfArticles", SqlDbType.Int);
+                myNumberOfArticles.Value = numberOfArticles;
+
+                myCommand.Parameters.Add(myOrderHeadID);
+                myCommand.Parameters.Add(myArticleID);
+                myCommand.Parameters.Add(myPrice);
+                myCommand.Parameters.Add(myNumberOfArticles);
+
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+
+        }
+
         public static List<OrderDetail> ReadOrderDetail(int orderHeadID)
         {
             List<OrderDetail> orderDetails = new List<OrderDetail>();
@@ -765,9 +808,6 @@ namespace ClassLibraryKAB
         //LOGIN. Function that returns a CustomerID if the username/password combination exist and -1 if not
 
         #endregion OrderDetail
-
-        
-
         
     }
 }

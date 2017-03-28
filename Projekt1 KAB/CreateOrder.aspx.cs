@@ -15,6 +15,7 @@ namespace Projekt1_KAB
         {
             if (Session["Cart"] != null)
             {
+
                 List<Article> cart = ((List<Article>)Session["Cart"]);
 
                 Customer user = ((Customer)Session["user"]);
@@ -26,16 +27,17 @@ namespace Projekt1_KAB
 
                 int orderHeadID = ClassLibraryKAB.SQL.CreateOrderHead(customerID, discount, orderDate, orderStatus);
 
+
                 foreach (var item in cart)
                 {
                     int articleID = item.ArticleID;
                     decimal price = item.ArticlePrice;
                     int numberOfArticles = 1;
-                   
+
                     ClassLibraryKAB.SQL.CreateOrderDetail(orderHeadID, articleID, price, numberOfArticles);
                 }
-
                 
+
             }
         }
     }
