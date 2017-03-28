@@ -691,7 +691,6 @@ namespace ClassLibraryKAB
 
                 SqlParameter myNumberOfArticles = new SqlParameter("@NumberOfArticles", SqlDbType.Int);
                 myNumberOfArticles.Value = numberOfArticles;
-
                 myCommand.Parameters.Add(myOrderHeadID);
                 myCommand.Parameters.Add(myArticleID);
                 myCommand.Parameters.Add(myPrice);

@@ -26,7 +26,7 @@
             <form class="form-inline">
                 <div class="form-group">
                     <div id="rubrikDiv">
-                        <img src="Image/Logga.jpg" class="img-rounded" alt="KABpenna" width="304" height="236"/>
+                        <img src="Image/Logga.png" class="img-rounded" alt="KABpenna" width="304" height="236"/>
                         
                     </div>
                 </div>
@@ -89,7 +89,6 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#">Häftaparater</a></li>
                                 <li><a href="#">Häftklammar</a></li>
-                                <li><a href="#">produkt 3</a></li>
                             </ul>
                         </li>
                     </ul>
