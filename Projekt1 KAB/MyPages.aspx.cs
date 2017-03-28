@@ -9,6 +9,7 @@ namespace Projekt1_KAB
 {
     public partial class MyPages : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
