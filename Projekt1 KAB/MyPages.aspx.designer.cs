@@ -13,6 +13,15 @@ namespace Projekt1_KAB {
     public partial class MyPages {
         
         /// <summary>
+        /// formMyPages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm formMyPages;
+        
+        /// <summary>
         /// LabelRegisterBox control.
         /// </summary>
         /// <remarks>
