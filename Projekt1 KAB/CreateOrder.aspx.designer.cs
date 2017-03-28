@@ -10,7 +10,7 @@
 namespace Projekt1_KAB {
     
     
-    public partial class OrderHead {
+    public partial class CreateOrder {
         
         /// <summary>
         /// createOrder control.

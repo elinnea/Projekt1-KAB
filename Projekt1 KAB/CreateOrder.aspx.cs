@@ -9,7 +9,7 @@ using ClassLibraryKAB;
 
 namespace Projekt1_KAB
 {
-    public partial class OrderHead : System.Web.UI.Page
+    public partial class CreateOrder : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
