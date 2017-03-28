@@ -20,7 +20,7 @@
         <tr><td>E-mail: </td><td><asp:TextBox ID="TextBoxEmail" placeholder=" Ange e-mailadress" runat="server"></asp:TextBox></td></tr>
         <tr><td>Telefonnummer: </td><td><asp:TextBox ID="TextBoxPhoneNumber" placeholder=" Ange telefonnummer" runat="server"></asp:TextBox></td></tr>
         <tr><td></td><td></td></tr>
-        <tr><td></td><td><asp:Button ID="ButtonRegister" class="btn btn-success btn-block" runat="server" Text="Registrera dig" OnClick="ButtonRegister_Click"></asp:Button></td></tr>
+        <tr><td></td><td><asp:Button ID="ButtonRegister" class="btn btn-primary btn-block" runat="server" Text="Registrera dig" OnClick="ButtonRegister_Click"></asp:Button></td></tr>
         <tr><td colspan="2">
                 <asp:Label ID="LabelSuccess" runat="server" Text="Välkommen som kund!" Visible="false" ForeColor="Green"></asp:Label>
             </td></tr>
