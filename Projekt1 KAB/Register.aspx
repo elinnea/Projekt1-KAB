@@ -7,7 +7,7 @@
 <center>
     <table id="regtable" style="text-align: left">
         
-        <asp:Label ID="LabelRegisterBox" style="font:bold 18px verdana; text-align: left" runat="server" Text="Registrera dig som kund"></asp:Label>
+        <asp:Label ID="LabelRegisterBox" style="font:bold 22px glyphicon; text-align: left" runat="server" Text="Registrera dig som kund"></asp:Label>
 
         <tr><td>Användarnamn: </td><td><asp:TextBox class="textboxes" ID="TextBoxUserName" placeholder=" Ange användarnamn" runat="server"></asp:TextBox></td></tr>
         <tr><td>Lösenord: </td><td><asp:TextBox class="textboxes" ID="TextBoxPassWord" TextMode="Password" placeholder=" Lösenord, minst sex tecken" runat="server"></asp:TextBox></td></tr>

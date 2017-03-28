@@ -4,57 +4,31 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="formLogin" runat="server">
-        <div>
-            <table style="width: 100%;">
-                <caption class="style1">
-                    <strong>Login Form</strong>
-                </caption>
-                <tr>
-                    <td class="style2"></td>
-                    <td></td>
-                    <td></td>
+        <center><div>
+            <table style="text-align:left">
+                <asp:Label ID="LabelRegisterBox" style="font:bold 22px glyphicon; text-align: left" runat="server" Text="Logga in"></asp:Label>
+                
+                    <td class="style2"></td><td></td><td></td>
+                <tr><td class="style2">Användarnamn:</td>
+                    <td><asp:TextBox ID="TextBoxUsername" placeholder="Ange användarnamn" runat="server"></asp:TextBox></td>
+                    <td><%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxUsername" ErrorMessage="Please Enter Your Username"
+                                ForeColor="Red"></asp:RequiredFieldValidator>--%></td>
                 </tr>
-                <tr>
-                    <td class="style2">Username:</td>
-                    <td>
-                        <asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox>
-                    </td>
-                    <td>
-                       <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                                ControlToValidate="TextBoxUsername" ErrorMessage="Please Enter Your Username"
-                                ForeColor="Red"></asp:RequiredFieldValidator>--%>
-                    </td>
+                <tr> <td class="style2">Lösenord:</td>
+                    <td><asp:TextBox ID="TextBoxPassword" placeholder="Ange lösenord" TextMode="Password" runat="server"></asp:TextBox></td>
+                    <td> <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="Please Enter Your Password"
+                                ForeColor="Red"></asp:RequiredFieldValidator>--%></td>
                 </tr>
-                <tr>
-                    <td class="style2">Password:</td>
-                    <td>
-                        <asp:TextBox ID="TextBoxPassword" TextMode="Password" runat="server"></asp:TextBox>
-                    </td>
-                    <td>
-                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                                ControlToValidate="TextBox2" ErrorMessage="Please Enter Your Password"
-                                ForeColor="Red"></asp:RequiredFieldValidator>--%>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="style2"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="style2"></td>
-                    <td>
-                        <asp:Button ID="ButtonLogIN" runat="server" Text="Log In" OnClick="ButtonLogIN_Click" />
-                    </td>
-                    <td>
-                        <asp:Label ID="LabelLoginMsg" runat="server"></asp:Label>
-                    </td>
+                <tr><td class="style2"></td><td></td><td></td></tr>
+                <tr><td class="style2"></td>
+                    <td><asp:Button class="btn btn-primary btn-block" ID="ButtonLogIN" runat="server" Text="Logga in" OnClick="ButtonLogIN_Click" /></td>
                 </tr>
             </table>
+                    <asp:Label ID="LabelLoginMsg" runat="server"></asp:Label>
             <div style="float:none">
             Är du inte kund hos oss ännu? <br />
-             <a href="Register.aspx">Registera dig</a>
+             <a href="Register.aspx" style="text-decoration-line:underline">Registera dig idag!</a>
             </div>
-        </div>
+        </div></center>
     </form>
 </asp:Content>
