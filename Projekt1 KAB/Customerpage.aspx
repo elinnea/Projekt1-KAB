@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="Customerpage.aspx.cs" Inherits="Projekt1_KAB.Redirectpage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%--<script>
+            function BuyItem(id) {
+                $.getJSON("svc/svc_cart.aspx?AddToCart=1&articleID=" + id)
+                    .done(function (data) {
+                        alert(data);
+                    })
+            }
+    </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="formCustomerpage" runat="server">
@@ -13,6 +21,15 @@
             <asp:Button ID="Button1" runat="server" Height="47px" OnClick="Button1_Click"
                 Text="Logout" Width="92px" />
         </div>
+<%--        <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+            <div class="container">
+                <div class="row">
+                    <asp:Literal ID="dynamicArticles" runat="server"></asp:Literal>
+                </div>
+            </div>
+
+        </asp:Content>--%>
     </form>
 
 </asp:Content>
