@@ -16,7 +16,6 @@ namespace Projekt1_KAB
         {
             if (Session["Cart"] != null)
             {
-                Literal1.Text = "Din order är mottagen och produkter samt faktura kommer att skickas till angiven adress. Tack för att du valt att handla hos Kontorsprylar KAB!";
                 // Hämtar varukorgen med alla artiklar och gör en lista
                 List<Article> cart = ((List<Article>)Session["Cart"]);
 
@@ -75,10 +74,15 @@ namespace Projekt1_KAB
 
                 Session["orderNo"] = orderHeadID;
 
-                Response.Redirect("PayOrder.aspx");
-
 
             }
+        }
+
+        protected void goToBetala_Click(object sender, EventArgs e)
+        {
+            
+        
+            Response.Redirect("PayOrder.aspx");
         }
     }
 }
