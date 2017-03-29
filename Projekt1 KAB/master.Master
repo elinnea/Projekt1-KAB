@@ -40,12 +40,12 @@
         </div>
         <div class="form-group">
             <div class="rubrikBild">
-                <img src="Image/Rum.png" class="img-rounded" alt="Image" width="380" height="300" />
+                <img src="Image/images%20(4).jpg" class="img-rounded" alt="Image" width="300" height="200" />
             </div>
         </div>
         <div class="form-group">
             <div class="rubrikBild">
-                <img src="Image/julklappstips_barn1700x1700.jpg" class="img-rounded" alt="Image" width="380" height="300" />
+                <img src="Image/julklappstips_barn1700x1700.jpg" class="img-rounded" alt="Image" width="300" height="200" />
             </div>
         </div>
 
