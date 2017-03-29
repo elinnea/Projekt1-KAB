@@ -26,11 +26,11 @@ namespace Projekt1_KAB
                 html += $"<div class=\"panel-body\">{item.ArticleDescription}"; //endast lagt till item.desc... koden
                 html += $"<img style='height:100px;' src=\"{item.ArticleImage}\" class=\"img-responsive\" style=\"width:50%\" alt=\"Image\"></div>"; //height från 150 till 100, width från 100 till 50
                 html += $"<div class=\"panel - footer\">{item.ArticlePrice.ToString("C2", CultureInfo.CurrentCulture)}</div>";
-                //html += $"<button onclick=\"BuyItem({item.ArticleID})\" type=\"button\">KÖP</button>";
+                html += $"<button onclick=\"BuyItem({item.ArticleID})\" type=\"button\">KÖP</button>";
                 html += $"</div></div>";
             }
             dynamicArticles.Text = html;
-            //
+
         }
 
 

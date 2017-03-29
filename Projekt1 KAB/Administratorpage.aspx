@@ -68,7 +68,9 @@
         
         <table style="float:inherit; height: 130px;">
 
-             <tr><td><asp:Button class="btn btn-primary" ID="ButtonReadArticles" runat="server" OnClick="ButtonReadArticles_Click" Text="Se alla artiklar" /></td></tr>
+             <tr><td><asp:Button class="btn btn-primary" ID="ButtonReadArticles" runat="server" OnClick="ButtonReadArticles_Click" Text="Se alla artiklar" />
+            <asp:Button class="btn btn-primary" ID="ButtonReadInActiveArticles" runat="server" OnClick="ButtonReadInActiveArticles_Click" Text="Se inaktiva artiklar" />
+                 </td></tr>
             <tr><td><asp:ListBox ID="ListBoxArticles" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ListBoxArticles_SelectedIndexChanged" Height="252px" Width="357px"></asp:ListBox></td></tr>
         </table>
 

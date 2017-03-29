@@ -20,7 +20,7 @@ namespace Projekt1_KAB
             {
                 ClearTextBoxesAndUncheckCheckBoxes();
             }
-            
+
         }
 
         protected void ButtonAddArticle_Click(object sender, EventArgs e)
@@ -63,16 +63,46 @@ namespace Projekt1_KAB
         protected void ButtonReadArticles_Click(object sender, EventArgs e)
         {
             articles = ClassLibraryKAB.SQL.ReadArticles();
+            ListBoxArticles.Items.Clear();
 
             foreach (Article article in articles)
             {
                 ListBoxArticles.Items.Add($"{article.ArticleName}");
             }
+
+            Session["AllArticlesSelected"] = "true";
+        }
+
+        protected void ButtonReadInActiveArticles_Click(object sender, EventArgs e)
+        {
+            articles = ClassLibraryKAB.SQL.ReadArticles();
+            ListBoxArticles.Items.Clear();
+
+            foreach (Article article in articles)
+            {
+                if (article.IsActive != true)
+                {
+                    ListBoxArticles.Items.Add($"{article.ArticleName}");
+                }
+            }
+
+            Session["AllArticlesSelected"] = "false";
         }
 
         protected void ListBoxArticles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            articles = ClassLibraryKAB.SQL.ReadArticles();
+            bool AllArticlesSelected = false;
+
+            if ((string)Session["AllArticlesSelected"] == "true")
+                AllArticlesSelected = true;
+            else
+                AllArticlesSelected = false;
+
+            if (AllArticlesSelected)
+                articles = ClassLibraryKAB.SQL.ReadArticles();
+            else
+                articles = ClassLibraryKAB.SQL.ReadArticles().Where(a => !a.IsActive).ToList();
+
             int index = ListBoxArticles.SelectedIndex;
 
             if (index >= 0)
