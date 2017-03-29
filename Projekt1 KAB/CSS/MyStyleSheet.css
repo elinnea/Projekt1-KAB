@@ -7,13 +7,12 @@
     background-color: white;
     /*height: 15em;*/
     text-align: left;
-    color: #2a6fde;
     font-size: 3em;
     padding: 1em 1em 1em 1em;
 }
 
 .container-fluid {
-    background-color: #1f1f21;
+    background-color: #0b1f2e;
 }
 
 .form-group navbar-left {
@@ -38,3 +37,12 @@
   display:         flex;
 }
 /*.panel-body är tillagd och ändrad*/
+.clearfix {
+    background-color: #0b1f2e;
+
+}
+h3 {
+    color: white;
+    font-size: small;
+    font-family: glyphicon;
+}
