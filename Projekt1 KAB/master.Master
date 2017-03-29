@@ -16,6 +16,7 @@
 <body>
 <%--    <form id="form1" runat="server">--%>
 <%--        <div class="section glyphicon-fullscreen bridge-section">--%>
+   
         <ul class="nav navbar-nav navbar-right" style="padding-right:35px;">
             <li><asp:HyperLink ID="HyperLinkLogin" runat="server" href="Login.aspx" Visible="true"><span class="glyphicon glyphicon-log-in" style="font-size:15px;" ></span> Logga in</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLinkReg" runat="server" href="Register.aspx" Visible="true"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Registera dig</asp:HyperLink></li>
