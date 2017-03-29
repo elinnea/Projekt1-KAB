@@ -14,118 +14,114 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-<%--    <form id="form1" runat="server">--%>
-<%--        <div class="section glyphicon-fullscreen bridge-section">--%>
-        <ul class="nav navbar-nav navbar-right" style="padding-right:35px;">
-            <li><asp:HyperLink ID="HyperLinkLogin" runat="server" href="Login.aspx" Visible="true"><span class="glyphicon glyphicon-log-in" style="font-size:15px;" ></span> Logga in</asp:HyperLink></li>
-            <li><asp:HyperLink ID="HyperLinkReg" runat="server" href="Register.aspx" Visible="true"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Registera dig</asp:HyperLink></li>
-            <li><asp:HyperLink ID="HyperLinkMyPages" runat="server" href="MyPages.aspx" Visible="false"><span class="glyphicon glyphicon-cog" style="font-size:15px;" ></span> Mina sidor</asp:HyperLink></li>
-            <li><asp:HyperLink ID="HyperLinkLogout" runat="server" href="Logout.aspx" Visible="false"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Logga ut</asp:HyperLink></li>
-        </ul>
-<%--        <div class="container">--%>
-            <form class="form-inline">
-                <div class="form-group">
-                    <div id="rubrikDiv">
-                        <img src="Image/Logga.png" class="img-rounded" alt="KABpenna" width="450" height="236"/>
-                        
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group" >
-                        <input type="text" class="form-control" placeholder="Sök..." />
-                        <div class="input-group-btn">
-                            <button id="search" class="btn btn-default" type="submit">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <a href="Cart.aspx" class="btn btn-primary btn-lg">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Kundvagn
-                        </a>
-                    </div>
-                </div>
-            </form>
-<%--        </div>--%>
+    <%--    <form id="form1" runat="server">--%>
+    <%--        <div class="section glyphicon-fullscreen bridge-section">--%>
+    <ul class="nav navbar-nav navbar-right" style="padding: 35px;">
+        <li>
+            <asp:HyperLink ID="HyperLinkLogin" runat="server" href="Login.aspx" Visible="true"><span class="glyphicon glyphicon-log-in" style="font-size:15px;" ></span> Logga in</asp:HyperLink></li>
+        <li>
+            <asp:HyperLink ID="HyperLinkReg" runat="server" href="Register.aspx" Visible="true"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Registera dig</asp:HyperLink></li>
+        <li>
+            <asp:HyperLink ID="HyperLinkMyPages" runat="server" href="MyPages.aspx" Visible="false"><span class="glyphicon glyphicon-cog" style="font-size:15px;" ></span> Mina sidor</asp:HyperLink></li>
+        <li>
+            <asp:HyperLink ID="HyperLinkLogout" runat="server" href="Logout.aspx" Visible="false"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Logga ut</asp:HyperLink></li>
+        <li>
+            <img src="Image/images.jpg" class="img-rounded" alt="Image" width="50" height="50" /></li>
+    </ul>
+    <%--        <div class="container">--%>
+    <form class="form-inline">
+        <div class="form-group">
+            <div id="rubrikLogga">
+                <img src="Image/Logga.png" class="img-rounded" alt="KABpenna" width="250" height="150" />
 
-<%--        </div>--%>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="rubrikBild">
+                <img src="Image/Rum.png" class="img-rounded" alt="Image" width="400" height="300" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="rubrikBild">
+                <img src="Image/julklappstips_barn1700x1700.jpg" class="img-rounded" alt="Image" width="400" height="300" />
+            </div>
+        </div>
 
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Kontorsprylar AB</a>
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control input-lg" placeholder="Sök..." />
+                <div class="input-group-btn">
+                    <button id="search" class="btn btn-lg" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.aspx">Hem</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Erbjudande
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <a href="Cart.aspx" class="btn btn-primary btn-lg">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>Kundvagn
+                </a>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="rubrikBild">
+            </div>
+        </div>
+    </form>
+    <%--        </div>--%>
+
+    <%--        </div>--%>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Kontorsprylar AB</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.aspx">Hem</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Erbjudande
         <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Veckans deal</a></li>
-                                <li><a href="#">3 för 2</a></li>
-                            </ul>
-                        </li>
-                                           <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pärmar & register
-        <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Pärmar & register</a></li>
-                            </ul>
-                        </li>
-                                        <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pennor
-        <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Bläckpennor</a></li>
-                                <li><a href="#">Blyertspennor</a></li>
-                                <li><a href="#">Färgpennor</a></li>
-                            </ul>
-                        </li>
-                                        <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Häftapparater
-        <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Häftaparater</a></li>
-                                <li><a href="#">Häftklammar</a></li>
-                            </ul>
-                        </li>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Veckans deal</a></li>
+                        <li><a href="#">3 för 2</a></li>
                     </ul>
-
-               
-<%--                    <ul class="navbar-form navbar-left">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </div>
-                        </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pärmar & register
+        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Pärmar & register</a></li>
                     </ul>
-                    <ul class="navbar cart navbar-right">
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pennor
+        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Bläckpennor</a></li>
+                        <li><a href="#">Blyertspennor</a></li>
+                        <li><a href="#">Färgpennor</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Häftapparater
+        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Häftaparater</a></li>
+                        <li><a href="#">Häftklammar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
                         
-                    </ul>--%>
-                    <%--<ul class="nav navbar-nav navbar-right">
-                           <li class="dropdown">
-                            <a class="dropdown-toggle glyphicon glyphicon-shopping-cart" data-toggle="dropdown" href="#">Kundvagn
-        <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Produkt 1</a></li>
-                                <li><a href="#">Produkt 2</a></li>
-                                <li><a href="#">Produkt 3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registera dig</a></li>
-                        <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Logga in</a></li>
-                    </ul>--%>
 
-                </div>
-            </nav>
 
-<%--            <div class="modal-content">
+
+
+    <%--            <div class="modal-content">
                 <div class="modal-header"style="background-color:cornflowerblue">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title" style="background-color:cornflowerblue">logga in</h4>
@@ -150,11 +146,28 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
                 </div>--%>
-          <%--  </div>--%>
-<%--        </form>--%>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <a href="index.aspx">index.aspx</a>
-            </asp:ContentPlaceHolder>
-<%--    </form>--%>
+    <%--  </div>--%>
+    <%--        </form>--%>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <a href="index.aspx">index.aspx</a>
+    </asp:ContentPlaceHolder>
+
+    <footer id="footer" class="clearfix">
+        <div class="footerWrapper">
+            <div class="footerleftLink">
+                <div class="subClass">
+                    <h3>Kontakta oss</h3>
+                </div>
+                <div class="subClass">
+                    <h3>Mitt Konto</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <%--    </form>--%>
 </body>
 </html>

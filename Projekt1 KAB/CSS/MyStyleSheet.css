@@ -27,4 +27,12 @@
     padding: 3px 3px 3px 3px;
     padding-top: 2px;
 }
+.clearfix {
+    background-color: #0b1f2e;
 
+}
+h3 {
+    color: white;
+    font-size: small;
+    font-family: glyphicon;
+}
