@@ -83,6 +83,72 @@ namespace ClassLibraryKAB
             return nID;
         }
 
+        public static void UpdateCustomer(int customerID, string userName, string passWord, string firstName, string lastName, string adress, string zip, string city, string countryCode, string email, string phonenumber)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand("UpdateCustomer", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter newcustomerID = new SqlParameter("@CustomerID", SqlDbType.VarChar);
+                newcustomerID.Value = customerID;
+
+                SqlParameter newuserName = new SqlParameter("@UserName", SqlDbType.VarChar);
+                newuserName.Value = userName;
+
+                SqlParameter newpassWord = new SqlParameter("@UserPassword", SqlDbType.VarChar);
+                newpassWord.Value = passWord;
+
+                SqlParameter newfirstName = new SqlParameter("@FirstName", SqlDbType.VarChar);
+                newfirstName.Value = firstName;
+
+                SqlParameter newlastName = new SqlParameter("@LastName", SqlDbType.VarChar);
+                newlastName.Value = lastName;
+
+                SqlParameter newadress = new SqlParameter("@Street", SqlDbType.VarChar);
+                newadress.Value = adress;
+
+                SqlParameter newzip = new SqlParameter("@Zip", SqlDbType.VarChar);
+                newzip.Value = zip;
+
+                SqlParameter newcity = new SqlParameter("@City", SqlDbType.VarChar);
+                newcity.Value = city;
+
+                SqlParameter newcountryCode = new SqlParameter("@CountryCode", SqlDbType.VarChar);
+                newcountryCode.Value = countryCode;
+
+                SqlParameter newemail = new SqlParameter("@Email", SqlDbType.VarChar);
+                newemail.Value = email;
+
+                SqlParameter newphonenumber = new SqlParameter("@PhoneNumber", SqlDbType.VarChar);
+                newphonenumber.Value = phonenumber;
+
+                myCommand.Parameters.Add(newcustomerID);
+                myCommand.Parameters.Add(newuserName);
+                myCommand.Parameters.Add(newpassWord);
+                myCommand.Parameters.Add(newfirstName);
+                myCommand.Parameters.Add(newlastName);
+                myCommand.Parameters.Add(newadress);
+                myCommand.Parameters.Add(newzip);
+                myCommand.Parameters.Add(newcity);
+                myCommand.Parameters.Add(newcountryCode);
+                myCommand.Parameters.Add(newemail);
+                myCommand.Parameters.Add(newphonenumber);
+
+                myCommand.ExecuteNonQuery();
+
+            }
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+            finally { myConnection.Close(); }
+        }
+
         public static List<Customer> ReadAllCustomers()
         {
             List<Customer> customers = new List<Customer>();
@@ -404,22 +470,22 @@ namespace ClassLibraryKAB
                 SqlParameter newArticleName = new SqlParameter("@ArticleName", SqlDbType.VarChar);
                 newArticleName.Value = articleName;
 
-                SqlParameter newArticlePrice = new SqlParameter("@ArticlePrice", myConnection);
+                SqlParameter newArticlePrice = new SqlParameter("@ArticlePrice", SqlDbType.Money);
                 newArticlePrice.Value = articlePrice;
 
-                SqlParameter newArticleCategory = new SqlParameter("@ArticleCategory", myConnection);
+                SqlParameter newArticleCategory = new SqlParameter("@ArticleCategory", SqlDbType.VarChar);
                 newArticleCategory.Value = articleCategory;
 
-                SqlParameter newArticleDescription = new SqlParameter("@ArticleDescription", myConnection);
+                SqlParameter newArticleDescription = new SqlParameter("@ArticleDescription", SqlDbType.VarChar);
                 newArticleDescription.Value = articleDescription;
 
-                SqlParameter newIsActive = new SqlParameter("@IsActive", myConnection);
+                SqlParameter newIsActive = new SqlParameter("@IsActive", SqlDbType.Bit);
                 newIsActive.Value = isActive;
 
-                SqlParameter newIsInStock = new SqlParameter("@IsInStock", myConnection);
+                SqlParameter newIsInStock = new SqlParameter("@IsInStock", SqlDbType.Bit);
                 newIsInStock.Value = IsInStock;
 
-                SqlParameter newArticleImage = new SqlParameter("@ArticleImage", myConnection);
+                SqlParameter newArticleImage = new SqlParameter("@ArticleImage", SqlDbType.VarChar);
                 newArticleImage.Value = articleImage;
 
                 myCommand.Parameters.Add(newArticleNumber);

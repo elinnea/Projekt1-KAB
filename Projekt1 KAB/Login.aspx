@@ -10,12 +10,12 @@
                 
                     <td class="style2"></td><td></td><td></td>
                 <tr><td class="style2">Användarnamn:</td>
-                    <td><asp:TextBox ID="TextBoxUsername" placeholder="Ange användarnamn" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox class="textboxes" ID="TextBoxUsername" placeholder="Ange användarnamn" runat="server"></asp:TextBox></td>
                     <td><%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxUsername" ErrorMessage="Please Enter Your Username"
                                 ForeColor="Red"></asp:RequiredFieldValidator>--%></td>
                 </tr>
                 <tr> <td class="style2">Lösenord:</td>
-                    <td><asp:TextBox ID="TextBoxPassword" placeholder="Ange lösenord" TextMode="Password" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox class="textboxes"  ID="TextBoxPassword" placeholder="Ange lösenord" TextMode="Password" runat="server"></asp:TextBox></td>
                     <td> <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="Please Enter Your Password"
                                 ForeColor="Red"></asp:RequiredFieldValidator>--%></td>
                 </tr>

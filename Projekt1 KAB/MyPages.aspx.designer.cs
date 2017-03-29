@@ -31,6 +31,15 @@ namespace Projekt1_KAB {
         protected global::System.Web.UI.WebControls.Label LabelWelcome;
         
         /// <summary>
+        /// LiteralWelcome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralWelcome;
+        
+        /// <summary>
         /// LabelRegisterBox control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,24 @@ namespace Projekt1_KAB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxPhoneNumber;
+        
+        /// <summary>
+        /// ButtonUpdateCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonUpdateCustomer;
+        
+        /// <summary>
+        /// LiteralOrderHeadInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralOrderHeadInfo;
         
         /// <summary>
         /// dynamicOrderHead control.
