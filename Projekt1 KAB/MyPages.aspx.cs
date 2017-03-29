@@ -37,7 +37,7 @@ namespace Projekt1_KAB
                     TextBoxPhoneNumber.Text = user.PhoneNumber;
                 }
 
-                LiteralOrderHeadInfo.Text = "Här ser du dina tidiagre ordrar:";
+                LiteralOrderHeadInfo.Text = "Här ser du dina tidigare ordrar:";
                 // Visa data för kunden Orderhuvud
                 List<OrderHead> orderHead = SQL.ReadOrderHead(customerID);
 
