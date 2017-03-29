@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibraryKAB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,15 +13,30 @@ namespace Projekt1_KAB
         protected void Page_Load(object sender, EventArgs e)
         {
             bool isUserLoggedOn = Session["id"] != null;
+            
 
             if (isUserLoggedOn)
             {
+
                 HyperLinkLogin.Visible = false;
                 HyperLinkReg.Visible = false;
                 HyperLinkMyPages.Visible = true;
                 HyperLinkLogout.Visible = true;
+
+                bool isAdmin = false;
+                Customer admin = ((Customer)Session["user"]);
+                isAdmin = admin.IsAdmin;
+
+
+                if (isAdmin)
+                {
+                    HyperLinkAdmin.Visible = true;
+                    HyperLinkMyPages.Visible = false;
+                }
             }
+
             
+
         }
 
     }

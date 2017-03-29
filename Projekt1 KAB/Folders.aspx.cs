@@ -1,39 +1,38 @@
-﻿using System;
+﻿using ClassLibraryKAB;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ClassLibraryKAB;
-using System.Globalization;
 
 namespace Projekt1_KAB
 {
-    public partial class index : System.Web.UI.Page
+    public partial class FoldersForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            List<Article> articles = SQL.ReadArticles();
+
+            List<Article> articlesByCategory = SQL.GetArticleByCategory("Pärmar & Register");
 
             string html = "";
+            
 
-            foreach (Article item in articles)
+            foreach (Article item in articlesByCategory)
             {
-                
+
                 html += $"<div class=\"col-sm-4\"><div class=\"panel panel-primary\">";
                 html += $"<div class=\"panel-heading\">{item.ArticleName}</div>";
                 html += $"<div class=\"panel-body\">{item.ArticleDescription}"; //endast lagt till item.desc... koden
                 html += $"<img style='height:100px;' src=\"{item.ArticleImage}\" class=\"img-responsive\" style=\"width:50%\" alt=\"Image\"></div>"; //height från 150 till 100, width från 100 till 50
-                html += $"<div class=\"panel-footer\"><div>{item.ArticlePrice.ToString("C2", CultureInfo.CurrentCulture)}</div>";
-                html += $"<div style=\"text-align:right;\"><button onclick=\"BuyItem({item.ArticleID})\" type=\"button\">KÖP</button></div></div>";
+                html += $"<div class=\"panel - footer\">{item.ArticlePrice.ToString("C2", CultureInfo.CurrentCulture)}</div>";
+                html += $"<button onclick=\"BuyItem({item.ArticleID})\" type=\"button\">KÖP</button>";
                 html += $"</div></div>";
             }
-            dynamicArticles.Text = html;
-            //
+            dynamicCategory.Text = html;
+
         }
-
-
     }
-
 }

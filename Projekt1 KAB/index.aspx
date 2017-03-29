@@ -11,7 +11,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<%--    <div class="container">--%>
+    <div class="container">
 <%--    <form id="formIndex">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -48,5 +48,5 @@
         <div class="row">
             <asp:Literal ID="dynamicArticles" runat="server"></asp:Literal>
         </div>
-<%--    </div>--%>
+    </div>
 </asp:Content>

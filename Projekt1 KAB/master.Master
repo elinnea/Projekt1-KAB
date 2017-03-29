@@ -24,6 +24,8 @@
         <li>
             <asp:HyperLink ID="HyperLinkMyPages" runat="server" href="MyPages.aspx" Visible="false"><span class="glyphicon glyphicon-cog" style="font-size:15px;" ></span> Mina sidor</asp:HyperLink></li>
         <li>
+            <asp:HyperLink ID="HyperLinkAdmin" runat="server" href="Administratorpage.aspx" Visible="false"><span class="glyphicon glyphicon-cog" style="font-size:15px;" ></span> Adminsida</asp:HyperLink></li>
+        <li>
             <asp:HyperLink ID="HyperLinkLogout" runat="server" href="Logout.aspx" Visible="false"><span class="glyphicon glyphicon-user" style="font-size:15px;" ></span> Logga ut</asp:HyperLink></li>
         <li>
             <img src="Image/images.jpg" class="img-rounded" alt="Image" width="50" height="50" /></li>
@@ -38,12 +40,12 @@
         </div>
         <div class="form-group">
             <div class="rubrikBild">
-                <img src="Image/Rum.png" class="img-rounded" alt="Image" width="400" height="300" />
+                <img src="Image/Rum.png" class="img-rounded" alt="Image" width="380" height="300" />
             </div>
         </div>
         <div class="form-group">
             <div class="rubrikBild">
-                <img src="Image/julklappstips_barn1700x1700.jpg" class="img-rounded" alt="Image" width="400" height="300" />
+                <img src="Image/julklappstips_barn1700x1700.jpg" class="img-rounded" alt="Image" width="380" height="300" />
             </div>
         </div>
 
@@ -92,24 +94,23 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pärmar & register
         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Pärmar & register</a></li>
+                        <li><a href="Folders.aspx">Pärmar & register</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pennor
         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Bläckpennor</a></li>
-                        <li><a href="#">Blyertspennor</a></li>
-                        <li><a href="#">Färgpennor</a></li>
+                        <li><a href="Pencils.aspx"</a>Pennor</a></li>
+
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Häftapparater
         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Häftaparater</a></li>
-                        <li><a href="#">Häftklammar</a></li>
+                        <li><a href="Staplers.aspx"</a>Häftaparater och häftklammar</a></li>
+                        <li><a href="#"></a></li>
                     </ul>
                 </li>
             </ul>
@@ -150,24 +151,21 @@
     <%--        </form>--%>
 
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <div class="masterContainer">
         <a href="index.aspx">index.aspx</a>
-    </asp:ContentPlaceHolder>
-
-    <footer id="footer" class="clearfix">
-        <div class="footerWrapper">
-            <div class="footerleftLink">
-                <div class="subClass">
-                    <h3>Kontakta oss</h3>
-                </div>
-                <div class="subClass">
-                    <h3>Mitt Konto</h3>
-                </div>
-
             </div>
+    </asp:ContentPlaceHolder>
+    
 
-        </div>
-
-    </footer>
+    <footer class="footerSticky">
+      
+  <div class="containerFooter">
+        
+    <span class="text-muted">Kontorsprylar AB<br/>Häftapparatsgatan 7 i Gemträsk<br/>Kontakta oss<br/>Ring oss 0921-44556<br/>kundservice@kontorsprylarab.se</span>
+      
+  </div>
+    
+</footer>
     <%--    </form>--%>
 </body>
 </html>
