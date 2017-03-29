@@ -7,12 +7,14 @@
             <div class="container">
                 <div class="rowOrder">
                     <asp:Literal ID="dynamicOrder" runat="server"></asp:Literal>
-                    <asp:Button ID="OrderInfo" runat="server" Text="Order info" OnClick="goToBetala_Click" />
                 </div>
                 <div class="rowOrder">
                     <asp:Literal ID="dynamicOrderDetails" runat="server"></asp:Literal>
                 </div>
             </div>
+            <div>
+                    <asp:Button ID="OrderInfo" class="btn btn-primary bottom" runat="server" Text="Till kassan" OnClick="goToBetala_Click" />
+                </div>
         </form>
    
 </asp:Content>
