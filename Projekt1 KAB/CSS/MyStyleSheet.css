@@ -87,3 +87,7 @@ body {
 .text-muted {
     padding: 15px 15px 15px 15px;
 }
+
+.masterContainer {
+    padding: 20px 0 20px 0;
+}
