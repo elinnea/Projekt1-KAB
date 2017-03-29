@@ -18,15 +18,25 @@
 .form-group navbar-left {
     padding-top: 1em;
 }
-
 .form-group {
     padding: 1em 1em 1em 1em; 
 }
 
-.textboxes {
+.container {
+    padding: 0 0 0 0;
+}
+.textboxes{
     padding: 3px 3px 3px 3px;
     padding-top: 2px;
 }
+.panel-body{
+    text-align: left;
+    display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+/*.panel-body är tillagd och ändrad*/
 .clearfix {
     background-color: #0b1f2e;
 
