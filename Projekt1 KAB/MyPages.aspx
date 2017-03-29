@@ -54,7 +54,7 @@
             <tr>
                 <td>Landskod: </td>
                 <td>
-                    <asp:TextBox ID="DropDownListCountryCode" placeholder=" ex. SE för Sverige" runat="server"></asp:TextBox></td>
+                    <asp:DropDownList ID="DropDownListCountryCode" runat="server"><asp:ListItem>SE</asp:ListItem><asp:ListItem>NO</asp:ListItem><asp:ListItem>FI</asp:ListItem></asp:DropDownList></td>
             </tr>
             <tr>
                 <td>E-mail: </td>
@@ -70,21 +70,6 @@
                 <td></td>
                 <td></td>
             </tr>
-
-       <tr><td>Kundnummer: </td><td><asp:Label ID="LabelCustomerID" runat="server"></asp:Label></td></tr>
-       <tr><td>Användarnamn: </td><td><asp:Label ID="LabelUserName" runat="server"></asp:Label></td></tr>
-       <tr><td>Lösenord: </td><td><asp:TextBox ID="TextBoxPassWord" runat="server"></asp:TextBox></td></tr>
-       <tr><td>Förnamn: </td><td><asp:TextBox ID="TextBoxFirstName" runat="server"></asp:TextBox></td></tr>
-       <tr><td>Efternamn: </td><td><asp:TextBox ID="TextBoxLastName" runat="server"></asp:TextBox></td></tr>
-       <tr><td>Adress: </td><td><asp:TextBox ID="TextBoxAdress" runat="server"></asp:TextBox></td></tr>
-       <tr><td>Postnr: </td><td><asp:TextBox ID="TextBoxZip" runat="server"></asp:TextBox></td></tr>
-       <tr><td>Ort: </td><td><asp:TextBox ID="TextBoxCity" runat="server"></asp:TextBox></td></tr>
-        <tr><td>Landskod: </td><td><asp:DropDownList ID="DropDownListCountryCode" runat="server"><asp:ListItem>SE</asp:ListItem><asp:ListItem>NO</asp:ListItem><asp:ListItem>FI</asp:ListItem></asp:DropDownList></td></tr>
-       <tr><td>E-mail: </td><td><asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox></td></tr>
-       <tr><td>Telefonnummer: </td><td><asp:TextBox ID="TextBoxPhoneNumber" runat="server"></asp:TextBox></td></tr>
-       <tr><td></td><td></td></tr>     
-   </table>
-
         </table>
         <table>
         <tr>
