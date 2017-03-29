@@ -527,6 +527,48 @@ namespace ClassLibraryKAB
             finally { myConnection.Close(); }
         }
 
+        public static List<Article> GetArticleByCategory(string inputCategoryName)
+        {
+            SqlConnection myConnection = new SqlConnection(source);
+            List<Article> articlesByCategory = new List<Article>();
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand("SearchArticleByCategory", myConnection);
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter articleCategory = new SqlParameter("@FindArticleByCategory", SqlDbType.NVarChar);
+                articleCategory.Value = inputCategoryName;
+
+                myCommand.Parameters.Add(articleCategory);
+
+                SqlDataReader myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    articlesByCategory.Add(new Article(
+                    Convert.ToInt32(myReader["ArticleID"].ToString()),
+                    myReader["ArticleName"].ToString(),
+                    Convert.ToDecimal(myReader["ArticlePrice"].ToString()),
+                    myReader["ArticleCategory"].ToString(),
+                    myReader["ArticleDescription"].ToString(),
+                    Convert.ToBoolean(myReader["IsActive"].ToString()),
+                    Convert.ToBoolean(myReader["IsInStock"].ToString()),
+                    myReader["ArticleImage"].ToString()
+                    ));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally { myConnection.Close(); }
+
+            return articlesByCategory;
+        }
+
         #endregion Customer
 
         #region OrderHead

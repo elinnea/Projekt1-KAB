@@ -32,6 +32,10 @@
     margin: 3px;
     
 }
+
+.panel-head {
+   color: #0b1f2e;
+}
 .panel-body{
     text-align: left;
     display: -webkit-box;
@@ -39,13 +43,47 @@
   display: -ms-flexbox;
   display:         flex;
 }
-/*.panel-body är tillagd och ändrad*/
-.clearfix {
-    background-color: #0b1f2e;
 
+.dropdown-menu {
+    background-color: #2774ab;
 }
-h3 {
-    color: white;
-    font-size: small;
-    font-family: glyphicon;
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+
+.footerSticky {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 140px;
+    /*line-height: 60px;*/
+    /* Vertically center the text there */
+    background-color: #0b1f2e;
+    
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.containerFooter {
+    width: auto;
+    padding: 15px 15px 15px 15px;
+    text-align: center;
+}
+
+.text-muted {
+    padding: 15px 15px 15px 15px;
 }

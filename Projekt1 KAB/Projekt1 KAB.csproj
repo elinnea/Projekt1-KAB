@@ -148,6 +148,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Folders.aspx" />
+    <Content Include="Pencils.aspx" />
     <Content Include="PayOrder.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -168,6 +170,7 @@
   <ItemGroup>
     <Content Include="index.aspx" />
     <Content Include="Customerpage.aspx" />
+    <Content Include="Staplers.aspx" />
     <Content Include="svc\svc_cart.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -244,6 +247,13 @@
     <Compile Include="OrderConfirmation.aspx.designer.cs">
       <DependentUpon>OrderConfirmation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pencils.aspx.cs">
+      <DependentUpon>Pencils.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pencils.aspx.designer.cs">
+      <DependentUpon>Pencils.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PayOrder.aspx.cs">
       <DependentUpon>PayOrder.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -259,12 +269,26 @@
     <Compile Include="Customerpage.aspx.designer.cs">
       <DependentUpon>Customerpage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Folders.aspx.cs">
+      <DependentUpon>Folders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Folders.aspx.designer.cs">
+      <DependentUpon>Folders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staplers.aspx.cs">
+      <DependentUpon>Staplers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staplers.aspx.designer.cs">
+      <DependentUpon>Staplers.aspx</DependentUpon>
     </Compile>
     <Compile Include="svc\svc_cart.aspx.cs">
       <DependentUpon>svc_cart.aspx</DependentUpon>
