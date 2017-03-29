@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="Administratorpage.aspx.cs" Inherits="Projekt1_KAB.Administratorpage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CSS/MyStyleSheet.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
             height: 22px;
@@ -21,21 +22,21 @@
             <td>&nbsp;</td>
 
         </tr>
-        <td></td><td><asp:Label style="font:bold 18px verdana; text-align: left" runat="server" Text="Lägg till artikelnummer"></asp:Label></td>
+        <tr><td></td><td><asp:Label style="font:bold 18px verdana; text-align: left" runat="server" Text="Lägg till artikelnummer"></asp:Label></td></tr>
         <tr><td></td><td>Artikelnummer</td><td><asp:Label ID="LabelArticleID" runat="server" Text="Label"></asp:Label></td></tr>
 
         <tr><td></td><td>Namn</td><td><asp:TextBox class="textboxes" ID="TextBoxArticleName" placeholder="Ange artikelnamn" runat="server"></asp:TextBox></td></tr>
 
         <tr><td></td><td class="auto-style1">Pris</td>
-            <td class="auto-style1"><asp:TextBox class="textboxes" ID="TextBoxArticlePrice" placeholder="Ange artikelpris" runat="server"></asp:TextBox></td>
+            <td class="auto-style1"><asp:TextBox class="textboxes" ID="TextBoxArticlePrice" placeholder="Ange artikelpris" runat="server"></asp:TextBox></td></tr>
             
 
         <tr><td class="auto-style3"></td><td class="auto-style3">Kategori</td>
-            <td class="auto-style3"><asp:TextBox class="textboxes" ID="TextBoxArticleCategory" placeholder="Ange artikelkategori" runat="server"></asp:TextBox></td>
+            <td class="auto-style3"><asp:TextBox class="textboxes" ID="TextBoxArticleCategory" placeholder="Ange artikelkategori" runat="server"></asp:TextBox></td></tr>
            
         
         <tr><td></td><td class="auto-style2">Beskrivning</td>
-            <td class="auto-style2"><asp:TextBox class="textboxes" ID="TextBoxArticleDescription" placeholder="Ange beskrivning" runat="server"></asp:TextBox></td>
+            <td class="auto-style2"><asp:TextBox class="textboxes" ID="TextBoxArticleDescription" placeholder="Ange beskrivning" runat="server"></asp:TextBox></td></tr>
             
         
         <tr><td></td><td><asp:Label ID="LabelURL" runat="server" Text="URL"></asp:Label></td>
