@@ -7,6 +7,8 @@
         <table id="regtable" style="text-align: left">
 
             <asp:Label ID="LabelWelcome" Style="font: bold 18px verdana; text-align: center" runat="server"></asp:Label><br />
+            <asp:Literal ID="LiteralWelcome" runat="server"></asp:Literal><br />
+
             <asp:Label ID="LabelRegisterBox" Style="font: bold 16px verdana; text-align: left" runat="server" Text="Mina uppgifter"></asp:Label>
 
             <tr>
@@ -78,6 +80,7 @@
         </tr>
          </table>
         <div class="rowOrder">
+            <asp:Literal ID="LiteralOrderHeadInfo" runat="server"></asp:Literal>
             <asp:Literal ID="dynamicOrderHead" runat="server"></asp:Literal>
         </div>
     </form>

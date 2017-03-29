@@ -21,7 +21,11 @@ namespace Projekt1_KAB
 
                 if (!IsPostBack)
                 {
-                    LabelWelcome.Text = $"Välkommen {user.FirstName} {user.LastName}";
+                    LabelWelcome.Text += $"Välkommen {user.FirstName} {user.LastName}";
+                    LiteralWelcome.Text += $"Nedan kan du ändra dina uppgifter:";
+
+
+
                     LabelCustomerID.Text = user.CustomerID.ToString();
                     LabelUserName.Text = user.UserName;
                     TextBoxPassWord.Text = user.UserPassword;
@@ -34,6 +38,8 @@ namespace Projekt1_KAB
                     TextBoxEmail.Text = user.Email;
                     TextBoxPhoneNumber.Text = user.PhoneNumber;
                 }
+
+                LiteralOrderHeadInfo.Text = "Här ser du dina tidiagre ordrar:";
                 // Visa data för kunden Orderhuvud
                 List<OrderHead> orderHead = SQL.ReadOrderHead(customerID);
 
