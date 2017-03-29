@@ -41,7 +41,14 @@ namespace Projekt1_KAB
 
         protected void goToCreateOrder_Click(object sender, EventArgs e)
         {
-            Server.Transfer("CreateOrder.aspx");
+            if (Session["id"] != null)
+            {
+                Server.Transfer("CreateOrder.aspx");
+            }
+            else
+            {
+                Server.Transfer("Login.aspx");
+            }
         }
 
     }

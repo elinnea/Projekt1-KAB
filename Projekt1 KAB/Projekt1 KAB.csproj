@@ -149,6 +149,7 @@
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Folders.aspx" />
     <Content Include="Pencils.aspx" />
+    <Content Include="PayOrder.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -244,6 +245,13 @@
     </Compile>
     <Compile Include="Pencils.aspx.designer.cs">
       <DependentUpon>Pencils.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayOrder.aspx.cs">
+      <DependentUpon>PayOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayOrder.aspx.designer.cs">
+      <DependentUpon>PayOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Customerpage.aspx.cs">
