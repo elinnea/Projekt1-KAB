@@ -57,7 +57,7 @@ namespace Projekt1_KAB
 
                 dynamicOrder.Text = htmlOH;
 
-                // Visa data för kunden Orderdetlajer
+                // Visa data för kunden Orderdetaljer
 
                 string htmlOD = "";
                 
@@ -72,6 +72,9 @@ namespace Projekt1_KAB
 
                 dynamicOrderDetails.Text = htmlOD;
 
+                Session["orderNo"] = orderHeadID;
+
+                Response.Redirect("PayOrder.aspx");
 
 
             }

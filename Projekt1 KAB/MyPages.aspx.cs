@@ -29,7 +29,7 @@ namespace Projekt1_KAB
                 TextBoxAdress.Text = user.Street;
                 TextBoxZip.Text = user.Zip;
                 TextBoxCity.Text = user.City;
-                TextBoxCountryCode.Text = user.CountryCode;
+                DropDownList1.Text = user.CountryCode;
                 TextBoxEmail.Text = user.Email;
                 TextBoxPhoneNumber.Text = user.PhoneNumber;
 

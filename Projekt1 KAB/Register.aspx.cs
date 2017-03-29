@@ -21,7 +21,7 @@ namespace Projekt1_KAB
         {
             if (TextBoxFirstName.Text.Length > 0 && TextBoxLastName.Text.Length > 0)
             {
-                int newCustomerID = SQL.AddCustomer(TextBoxUserName.Text, TextBoxPassWord.Text, TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxAdress.Text, TextBoxZip.Text, TextBoxCity.Text, TextBoxCountryCode.Text, TextBoxEmail.Text, TextBoxPhoneNumber.Text, false, true);
+                int newCustomerID = SQL.AddCustomer(TextBoxUserName.Text, TextBoxPassWord.Text, TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxAdress.Text, TextBoxZip.Text, TextBoxCity.Text, DropDownList1.Text, TextBoxEmail.Text, TextBoxPhoneNumber.Text, false, true);
             }
 
             LabelSuccess.Visible = true;

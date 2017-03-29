@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <asp:Literal ID="dynamicCart" runat="server"></asp:Literal>
-                <asp:Button ID="goToCreateOrder" runat="server" Text="Betala" OnClick="goToCreateOrder_Click" />
+                <asp:Button ID="goToCreateOrder" runat="server" Text="Betala" class="btn-primary btn-lg"  OnClick="goToCreateOrder_Click" />
             </div>
         </div>
     </form>
