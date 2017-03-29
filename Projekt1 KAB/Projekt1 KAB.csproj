@@ -133,6 +133,7 @@
     <Content Include="CreateOrder.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="MyPages.aspx" />
+    <Content Include="OrderConfirmation.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -238,6 +239,13 @@
     </Compile>
     <Compile Include="MyPages.aspx.designer.cs">
       <DependentUpon>MyPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderConfirmation.aspx.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderConfirmation.aspx.designer.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pencils.aspx.cs">
       <DependentUpon>Pencils.aspx</DependentUpon>
