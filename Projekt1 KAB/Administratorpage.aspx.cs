@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ClassLibraryKAB;
+using System.Globalization;
 
 namespace Projekt1_KAB
 {
@@ -111,7 +112,7 @@ namespace Projekt1_KAB
 
                 LabelArticleID.Text = myArticle.ArticleID.ToString();
                 TextBoxArticleName.Text = myArticle.ArticleName;
-                TextBoxArticlePrice.Text = myArticle.ArticlePrice.ToString();
+                TextBoxArticlePrice.Text = myArticle.ArticlePrice.ToString("C2", CultureInfo.CurrentCulture);
                 TextBoxArticleCategory.Text = myArticle.ArticleCategory;
                 TextBoxArticleDescription.Text = myArticle.ArticleDescription;
                 TextBoxURL.Text = myArticle.ArticleImage;
