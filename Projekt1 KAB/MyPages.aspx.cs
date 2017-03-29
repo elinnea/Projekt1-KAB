@@ -23,9 +23,7 @@ namespace Projekt1_KAB
                 {
                     LabelWelcome.Text += $"Välkommen {user.FirstName} {user.LastName}";
                     LiteralWelcome.Text += $"Nedan kan du ändra dina uppgifter:";
-
-
-
+                    
                     LabelCustomerID.Text = user.CustomerID.ToString();
                     LabelUserName.Text = user.UserName;
                     TextBoxPassWord.Text = user.UserPassword;
@@ -34,7 +32,7 @@ namespace Projekt1_KAB
                     TextBoxAdress.Text = user.Street;
                     TextBoxZip.Text = user.Zip;
                     TextBoxCity.Text = user.City;
-                    TextBoxCountryCode.Text = user.CountryCode;
+                    DropDownListCountryCode.Text = user.CountryCode;
                     TextBoxEmail.Text = user.Email;
                     TextBoxPhoneNumber.Text = user.PhoneNumber;
                 }
@@ -76,7 +74,7 @@ namespace Projekt1_KAB
                 string adress = TextBoxAdress.Text;
                 string zip = TextBoxZip.Text;
                 string city = TextBoxCity.Text;
-                string countryCode = TextBoxCountryCode.Text;
+                string countryCode = DropDownListCountryCode.Text;
                 string email = TextBoxEmail.Text;
                 string phonenumber = TextBoxPhoneNumber.Text;
 
