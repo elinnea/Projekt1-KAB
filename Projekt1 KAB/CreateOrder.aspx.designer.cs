@@ -31,15 +31,6 @@ namespace Projekt1_KAB {
         protected global::System.Web.UI.WebControls.Literal dynamicOrder;
         
         /// <summary>
-        /// OrderInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button OrderInfo;
-        
-        /// <summary>
         /// dynamicOrderDetails control.
         /// </summary>
         /// <remarks>
@@ -47,5 +38,14 @@ namespace Projekt1_KAB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal dynamicOrderDetails;
+        
+        /// <summary>
+        /// OrderInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button OrderInfo;
     }
 }

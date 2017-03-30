@@ -5,10 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="formCart" runat="server">
         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
-        <div class="container">
-            <div class="row">
-                <asp:Literal ID="dynamicCart" runat="server"></asp:Literal>
-                <asp:Button ID="goToCreateOrder" runat="server" Text="Order" class="btn-primary btn-lg"  OnClick="goToCreateOrder_Click" />
+        <div>
+            <div class="container">
+                <div class="row">
+                    <asp:Literal ID="dynamicCart" runat="server"></asp:Literal>
+                    <asp:Button ID="goToCreateOrder" runat="server" Text="Order" class="btn-primary btn-lg" OnClick="goToCreateOrder_Click" />
+                </div>
             </div>
         </div>
     </form>

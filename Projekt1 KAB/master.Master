@@ -157,9 +157,9 @@
     </asp:ContentPlaceHolder>
            </div>
 
-<%--    <footer class="footerSticky">--%>
+  <footer class="footerSticky">
       
- <%-- <div class="containerFooter">
+ <div class="containerFooter">
         
     <span class="text-muted">Kontorsprylar AB<br/>Häftapparatsgatan 7 i Gemträsk<br/>Kontakta oss<br/>Ring oss 0921-44556<br/>kundservice@kontorsprylarab.se</span>
       
