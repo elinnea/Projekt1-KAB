@@ -4,15 +4,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <form id="createOrder" runat="server">
-<%--            <div class="container">--%>
+            <%--<div class="container">--%>
                 <div class="rowOrder">
                     <asp:Literal ID="dynamicOrder" runat="server"></asp:Literal>
-                    <asp:Button ID="OrderInfo" runat="server" Text="Order info" OnClick="goToBetala_Click" />
+                    
                 </div>
                 <div class="rowOrder">
                     <asp:Literal ID="dynamicOrderDetails" runat="server"></asp:Literal>
                 </div>
-<%--            </div>--%>
+                       <%-- </div>--%>
+            <table>
+            <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Gå till Kassan" OnClick="goToBetala_Click" />
+                </table>
+
         </form>
    
 </asp:Content>
