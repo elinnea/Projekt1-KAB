@@ -40,12 +40,12 @@
         </div>
         <div class="form-group">
             <div class="rubrikBild">
-                <img src="Image/Rum.png" class="img-rounded" alt="Image" width="380" height="300" />
+                <img src="Image/images%20(4).jpg" class="img-rounded" alt="Image" width="300" height="200" />
             </div>
         </div>
         <div class="form-group">
             <div class="rubrikBild">
-                <img src="Image/julklappstips_barn1700x1700.jpg" class="img-rounded" alt="Image" width="380" height="300" />
+                <img src="Image/julklappstips_barn1700x1700.jpg" class="img-rounded" alt="Image" width="300" height="200" />
             </div>
         </div>
 
@@ -157,13 +157,13 @@
     </asp:ContentPlaceHolder>
            </div>
 
-  <footer class="footerSticky">
+    <footer class="footerSticky">
       
- <div class="containerFooter">
+    <div class="containerFooter">
         
     <span class="text-muted">Kontorsprylar AB<br/>Häftapparatsgatan 7 i Gemträsk<br/>Kontakta oss<br/>Ring oss 0921-44556<br/>kundservice@kontorsprylarab.se</span>
       
-  </div>--%>
+  </div>
     
 </footer>
     <%--    </form>--%>
